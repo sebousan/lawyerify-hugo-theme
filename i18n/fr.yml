@@ -1,0 +1,8 @@
+header:
+  accessibility:
+    footer: Accéder au bas de la page
+    main: Contenu principal
+    menu: Navigation principale
+navigation:
+  main: Navigation principale
+  menu: Menu
