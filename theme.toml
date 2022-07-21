@@ -1,0 +1,10 @@
+name = "Lawyerify Hugo Theme"
+description = "Hugo theme for Lawyerify websites"
+homepage = ""
+tags = []
+features = []
+min_version = "0.101.0"
+
+[author]
+  name = "sebousan"
+  homepage = "https://www.sebousan.coop"
