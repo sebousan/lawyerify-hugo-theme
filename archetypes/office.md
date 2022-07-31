@@ -1,7 +1,10 @@
 ---
-title: 
+title:
 address:
 zipcode:
 city:
+country:
+email:
 phone:
+fax:
 ---
