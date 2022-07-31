@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+  <code>SINGLE PERSON</code>
+
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.statutes }}
+    {{- $status := site.GetPage (printf "/statutes/%s" .) -}}
+    {{- with $status -}}
+    <p>{{ .Title }}</p>
+    {{ end }}
+  {{ end }}
+
+  <div class="row">
+    <div class="col-md-8">
+      {{ .Content }}
+    </div>
+    <div class="col-md-4">
+      <ul>
+        {{ range .Params.expertises }}
+          {{- $expertises := site.GetPage (printf "/expertises/%s" .) -}}
+          {{- with $expertises -}}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      <address>
+        {{- with .Params.phone -}}
+          <p>{{ . }}</p>
+        {{ end }}
+        {{- with .Params.fax -}}
+          <p>{{ . }}</p>
+        {{ end }}
+        {{- with .Params.email -}}
+          <p>{{ . }}</p>
+        {{ end }}
+        {{- with .Params.linkedin -}}
+          <p><a href="{{ . }}">{{ i18n "contact.social.linkedin" }}</a></p>
+        {{ end }}
+        {{- with .Params.twitter -}}
+        <p><a href="{{ . }}">{{ i18n "contact.social.twitter" }}</a></p>
+        {{ end }}
+      </address>
+    </div>
+  </div>
+
+{{ end }}
