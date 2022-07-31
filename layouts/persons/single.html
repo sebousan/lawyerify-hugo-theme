@@ -6,7 +6,13 @@
   {{ with .Params.statutes }}
     {{- $status := site.GetPage (printf "/statutes/%s" .) -}}
     {{- with $status -}}
-    <p>{{ .Title }}</p>
+    <p class="badge bg-primary">{{ .Title }}</p>
+    {{ end }}
+  {{ end }}
+  {{ range .Params.bars }}
+    {{- $bar := site.GetPage (printf "/bars/%s" .) -}}
+    {{- with $bar -}}
+    <p class="badge bg-info">{{ .Title }}</p>
     {{ end }}
   {{ end }}
 
@@ -31,13 +37,13 @@
           <p>{{ . }}</p>
         {{ end }}
         {{- with .Params.email -}}
-          <p>{{ . }}</p>
+          <p><a href="mailto:{{ . }}" target="_blank">{{ . }}</a></p>
         {{ end }}
         {{- with .Params.linkedin -}}
-          <p><a href="{{ . }}">{{ i18n "contact.social.linkedin" }}</a></p>
+          <p><a href="{{ . }}" target="_blank">{{ i18n "contact.social.linkedin" }}</a></p>
         {{ end }}
         {{- with .Params.twitter -}}
-        <p><a href="{{ . }}">{{ i18n "contact.social.twitter" }}</a></p>
+        <p><a href="https://twitter.com/{{ . }}" target="_blank">{{ i18n "contact.social.twitter" }}</a></p>
         {{ end }}
       </address>
     </div>

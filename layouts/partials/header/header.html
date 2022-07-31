@@ -2,6 +2,7 @@
   <nav class="navbar" role="navigation" aria-label="{{ i18n "navigation.main" }}">
     <div class="container">
       {{/* partial "header/logo.html" */}}
+      <a href="{{ site.BaseURL }}">{{ site.Title }}</a>
       {{ if isset site.Data.menus "primary"}}
         {{ partial "header/button.html" }}
         <div class="menu" id="navigation">

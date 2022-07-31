@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+  <code>SINGLE POST</code>
+
+  <h1>{{ .Title }}</h1>
+  {{ range .Params.persons }}
+    {{- $person := site.GetPage (printf "/persons/%s" .) -}}
+    {{- with $person -}}
+    <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+    {{ end }}
+  {{ end }}
+
+  <div class="row">
+    <div class="col-md-8">
+      {{ .Content }}
+    </div>
+    <div class="col-md-4">
+      <time>{{ .Date }}</time>
+      <ul>
+        {{ with .Params.cite }}
+          <li><a href="{{ .url }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+
+{{ end }}

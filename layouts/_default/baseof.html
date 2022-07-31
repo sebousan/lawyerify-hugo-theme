@@ -14,7 +14,9 @@
     {{- partial "header/accessibility.html" -}}
     {{- partial "header/header.html" -}}
     <main id="main" role="main" tabindex="-1">
-      {{- block "main" . }}{{- end }}
+      <div class="container">
+        {{- block "main" . }}{{- end }}
+      </div>
     </main>
     {{- partial "footer/footer.html" . -}}
     {{- partial "footer/cookie-banner.html" . -}}
