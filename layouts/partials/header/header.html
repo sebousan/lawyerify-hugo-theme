@@ -1,11 +1,11 @@
 <header role="banner">
   <nav class="navbar" role="navigation" aria-label="{{ i18n "navigation.main" }}">
     <div class="container">
-      {{ partial "header/logo.html" }}
+      {{/* partial "header/logo.html" */}}
       {{ if isset site.Data.menus "primary"}}
         {{ partial "header/button.html" }}
         <div class="menu" id="navigation">
-          
+
         </div>
       {{ end }}
     </div>
