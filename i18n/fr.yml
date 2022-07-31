@@ -1,3 +1,10 @@
+contact:
+  email: E-mail
+  fax: Fax
+  social:
+    linkedin: Linkedin
+    twitter: Twitter
+  telephone: Téléphone
 header:
   accessibility:
     footer: Accéder au bas de la page
