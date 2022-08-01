@@ -8,6 +8,9 @@ fax:
 linkedin:
 twitter:
 image:
-expertise:
+bar:
+expertises:
+languages:
+offices:
 statutes:
 ---

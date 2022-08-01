@@ -7,4 +7,5 @@ country:
 email:
 phone:
 fax:
+map:
 ---
