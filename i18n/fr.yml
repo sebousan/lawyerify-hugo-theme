@@ -1,3 +1,4 @@
+bar: Barreau de {{ .City }} 
 contact:
   email: E-mail
   fax: Fax

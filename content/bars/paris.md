@@ -1,3 +1,0 @@
----
-title: Barreau de Paris
----

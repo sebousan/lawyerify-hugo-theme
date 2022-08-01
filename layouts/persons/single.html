@@ -3,17 +3,13 @@
   <code>SINGLE PERSON</code>
 
   <h1>{{ .Title }}</h1>
+  
   {{ with .Params.statutes }}
-    {{- $status := site.GetPage (printf "/statutes/%s" .) -}}
-    {{- with $status -}}
-    <p class="badge bg-primary">{{ .Title }}</p>
-    {{ end }}
+    <p class="badge bg-primary">{{ index $.Site.Data.statutes . }}</p>
   {{ end }}
   {{ range .Params.bars }}
-    {{- $bar := site.GetPage (printf "/bars/%s" .) -}}
-    {{- with $bar -}}
-    <p class="badge bg-info">{{ .Title }}</p>
-    {{ end }}
+    {{ $bar := index $.Site.Data.bars . }}
+    <p class="badge bg-info">{{ i18n "bar" (dict "City" $bar) }}</p>
   {{ end }}
 
   <div class="row">
@@ -27,6 +23,11 @@
           {{- with $expertises -}}
           <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
           {{ end }}
+        {{ end }}
+      </ul>
+      <ul>
+        {{ range .Params.languages }}
+          <li>{{ . }}</li>
         {{ end }}
       </ul>
       <address>
