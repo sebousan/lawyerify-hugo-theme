@@ -1,7 +1,8 @@
-bar: Barreau de {{ .City }} 
+bar: Barreau de {{ .City }}
 contact:
   email: E-mail
   fax: Fax
+  letterbox: Toque
   social:
     linkedin: Linkedin
     twitter: Twitter
