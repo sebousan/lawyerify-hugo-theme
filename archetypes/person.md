@@ -2,16 +2,18 @@
 title: "{{ replace .Name "-" " " | title }}"
 first_name:
 last_name:
-description:
-email:
-phone:
-fax:
-linkedin:
-twitter:
-image:
-bar:
 expertises:
-languages:
+status:
+persons:
 offices:
-statutes:
+contact:
+  email:
+  phone:
+  fax:
+  linkedin:
+  twitter:
+bar:
+languages:
+image:
+description:
 ---

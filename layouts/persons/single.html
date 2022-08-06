@@ -5,8 +5,11 @@
 
   <h1>{{ .Title }}</h1>
 
-  {{ with .Params.statutes }}
-    <p class="badge bg-primary">{{ index $.Site.Data.fr.statutes . }}</p>
+  {{ with .Params.status }}
+    {{- $status := site.GetPage (printf "/statutes/%s" .) -}}
+    {{- with $status -}}
+    <p class="badge bg-primary">{{ .Title }}</p>
+    {{- end -}}
   {{ end }}
   {{ range .Params.bars }}
     {{ $bar := index $.Site.Data.fr.bars . }}

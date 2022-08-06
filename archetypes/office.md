@@ -7,6 +7,6 @@ country:
 email:
 phone:
 fax:
-map:
 letterbox:
+map:
 ---
