@@ -1,3 +1,13 @@
-{{ $file := "/assets/images/logo.svg" }}
-{{ $fileDimensions := partial "GetImageDimensions" (dict "context" . "file" $file "static" true) }}
-<a class="logo" href="{{ site.BaseURL }}"><img src="{{ $file }}" alt="{{ site.Title }}" height="{{ index $fileDimensions 1 }}" width="{{ index $fileDimensions 0 }}"></a>
+<a class="logo" href="{{ site.BaseURL }}">
+  {{ if isset site.Params "logo" }}
+    {{ $file := site.Params.logo }}
+    {{ if fileExists site.Params.logo }}
+      {{ $fileDimensions := partial "GetImageDimensions" (dict "context" . "file" $file "static" true) }}
+      <img src="{{ $file }}" alt="{{ site.Title }}" height="{{ index $fileDimensions 1 }}" width="{{ index $fileDimensions 0 }}">
+    {{ else }}
+      {{ site.Title }}
+    {{ end }}
+  {{ else }}
+    {{ site.Title }}
+  {{ end }}
+</a>

@@ -1,15 +1,15 @@
 {{ define "hero"}}
-  {{- partial "authors/hero.html" . -}}
+  {{- partial "persons/hero.html" . -}}
 {{ end }}
 
 {{ define "main" }}
 
   <div class="container">
 
-    {{ partial "authors/title" . }}
+    {{ partial "persons/title" . }}
 
     {{ with .Pages }}
-      {{ partial "authors/items.html" . }}
+      {{ partial "persons/items.html" . }}
     {{ end }}
 
   </div>

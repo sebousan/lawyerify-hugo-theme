@@ -1,15 +1,17 @@
+{{ define "hero"}}
+  {{- partial "commons/hero.html" . -}}
+{{ end }}
+
 {{ define "main" }}
+  {{ partial "pages/schema" . }}
 
-  <code>SINGLE DEFAULT</code>
+  <div class="container">
 
-  <h1>{{ .Title }}</h1>
+    <div class="row">
+      {{ partial "commons/content.html" . }}
+      {{ partial "commons/sidebar" . }}
+    </div>
 
-  {{ .Content }}
-
-  <ul>
-    {{ range .Pages }}
-      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-    {{ end }}
-  </ul>
+  </div>
 
 {{ end }}

@@ -1,19 +1,18 @@
+{{ define "hero"}}
+  {{- partial "commons/hero.html" . -}}
+{{ end }}
+
 {{ define "main" }}
+  {{ partial "pages/schema" . }}
 
-  <code>LIST DEFAULT</code>
+  <div class="container">
 
-  <h1>{{ .Title }}</h1>
+    {{ partial "commons/title" . }}
 
-  <div class="row row-cols-1 row-cols-md-3 gy-4">
-    {{ range .Pages }}
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <a href="{{ .Permalink }}" class="stretched-link">{{ .Title }}</a>
-          </div>
-        </div>
-      </div>
+    {{ with .Pages }}
+      {{ partial "pages/items" . }}
     {{ end }}
+
   </div>
 
 {{ end }}

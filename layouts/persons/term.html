@@ -1,16 +1,16 @@
 {{ define "hero"}}
-  {{- partial "authors/hero.html" . -}}
+  {{- partial "persons/hero.html" . -}}
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "authors/schema" . }}
+  {{ partial "persons/schema" . }}
 
   <div class="container">
 
     <div class="row">
-      {{ partial "authors/title" . }}
-      {{ partial "authors/content" . }}
-      {{ partial "authors/sidebar" . }}
+      {{ partial "persons/title" . }}
+      {{ partial "persons/content" . }}
+      {{ partial "persons/sidebar" . }}
     </div>
 
     {{ with .Pages }}
