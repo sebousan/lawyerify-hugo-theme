@@ -9,9 +9,7 @@
         {{ with .text }}
           <p>{{ partial "PrepareHTML" . | markdownify }}</p>
         {{ end }}
-        {{ with .cta}}
-          <a href="{{ .url }}" class="btn">{{ partial "PrepareHTML" .text }}</a>
-        {{ end }}
+        {{ partial "commons/cta" .cta }}
       </div>
 
       {{ with .image}}

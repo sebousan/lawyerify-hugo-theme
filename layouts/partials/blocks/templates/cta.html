@@ -1,9 +1,7 @@
 <section class="block-cta">
   <div class="container">
 
-    {{ with .}}
-      <a href="{{ .url }}" class="btn">{{ partial "PrepareHTML" .text }}</a>
-    {{ end }}
+    {{ partial "commons/cta" . }}
 
   </div>
 </section>
