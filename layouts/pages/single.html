@@ -1,0 +1,17 @@
+{{ define "hero"}}
+  {{- partial "commons/hero.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+  {{ partial "pages/schema" . }}
+
+  <div class="container">
+
+    <div class="row">
+      {{ partial "commons/content.html" . }}
+      {{ partial "commons/sidebar" . }}
+    </div>
+
+  </div>
+
+{{ end }}

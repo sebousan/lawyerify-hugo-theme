@@ -1,0 +1,12 @@
+<ul class="pagination">
+  {{ with .PrevInSection }}
+    <li>
+      <a href="{{ .Permalink }}">{{ i18n "pagination.previous" }}</a>
+    </li>
+  {{ end }}
+  {{ with .NextInSection }}
+    <li>
+      <a href="{{ .Permalink }}">{{ i18n "pagination.next" }}</a>
+    </li>
+  {{ end }}
+</ul>

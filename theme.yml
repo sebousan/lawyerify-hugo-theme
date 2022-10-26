@@ -1,0 +1,9 @@
+name: "Lawyerify Hugo Theme"
+description: "Hugo theme for Lawyerify websites"
+tags: []
+features: []
+min_version: "0.102.2"
+
+author:
+  name: "Sébastien Moulène"
+  homepage: "https://www.sebousan.com"

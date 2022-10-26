@@ -1,0 +1,9 @@
+{{ if gt . 0 }}
+  <div class="posts">
+    {{ range . }}
+      <div>
+        {{ partial "posts/item.html" . }}
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

@@ -1,10 +1,13 @@
 {
-  "name": "lawyerify-hugo-theme",
-  "version": "1.0.0",
-  "repository": "git@github.com:sebousan/lawyerify-hugo-theme.git",
-  "author": "sebousan <sebousan@gmail.com>",
-  "dependencies": {
-    "@popperjs/core": "^2.11.2",
-    "bootstrap": "^5.2"
-  }
+    "name": "lawyerify-hugo-theme",
+    "version": "1.0.0",
+    "repository": "git@github.com:sebousan/lawyerify-hugo-theme.git",
+    "author": {
+        "name": "Sébastien Moulène",
+        "url": "https://www.sebousan.com/"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.11.2",
+        "bootstrap": "^5.2"
+    }
 }

@@ -1,0 +1,40 @@
+<figure class="block-blockquote">
+  <div class="container">
+    <div class="row">
+
+      <div class="content">
+        {{ with .text}}
+        <blockquote>
+          {{ partial "PrepareHTML" . }}
+        </blockquote>
+        {{ end }}
+
+        {{ with .author }}
+        <figcaption>
+          {{ with .image}}
+            {{ partial "commons/image.html" (dict
+                "src" .src
+                "alt" .alt
+                "desktop" "50x50"
+                "crop" "Top"
+              ) }}
+          {{ end }}
+          <div>
+            {{ with .title}}
+              <cite>{{ partial "PrepareHTML" . }}</cite><br>
+            {{ end }}
+            {{ partial "PrepareHTML" .text }}
+          </div>
+        </figcaption>
+        {{ end }}
+
+        {{ with .cta}}
+        <div>
+          <a href="{{ .url }}" class="btn btn-primary">{{ partial "PrepareHTML" .text }}</a>
+        </div>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</figure>

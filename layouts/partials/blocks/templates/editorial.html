@@ -1,0 +1,29 @@
+<section class="block-editorial block-editorial-{{ .direction }}">
+  <div class="container">
+    <div class="row">
+
+      <div class="content">
+        {{ with .title }}
+          <h2>{{ partial "PrepareHTML" . }}</h2>
+        {{ end }}
+        {{ with .text }}
+          <p>{{ partial "PrepareHTML" . | markdownify }}</p>
+        {{ end }}
+        {{ with .cta}}
+          <a href="{{ .url }}" class="btn">{{ partial "PrepareHTML" .text }}</a>
+        {{ end }}
+      </div>
+
+      {{ with .image}}
+        <div class="media">
+          {{ partial "commons/image.html" (dict
+              "src" .src
+              "alt" .alt
+              "class" "img-fluid"
+            ) }}
+        </div>
+      {{ end }}
+
+    </div>
+  </div>
+</section>

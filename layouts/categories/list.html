@@ -1,0 +1,21 @@
+{{ define "hero"}}
+  {{- partial "categories/hero.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+
+  <div class="container">
+
+    <header class="title">
+      {{ partial "commons/title" . }}
+      {{ partial "posts/filters/button" . }}
+    </header>
+    {{ partial "posts/filters" . }}
+
+    {{ $paginator := .Paginator.Pages }}
+    {{ partial "posts/items" $paginator }}
+    {{ partial "nav/pagination.html" . }}
+
+  </div>
+
+{{ end }}

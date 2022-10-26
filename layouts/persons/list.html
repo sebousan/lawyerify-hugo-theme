@@ -1,0 +1,17 @@
+{{ define "hero"}}
+  {{- partial "authors/hero.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+
+  <div class="container">
+
+    {{ partial "authors/title" . }}
+
+    {{ with .Pages }}
+      {{ partial "authors/items.html" . }}
+    {{ end }}
+
+  </div>
+
+{{ end }}

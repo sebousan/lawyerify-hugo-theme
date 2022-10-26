@@ -1,27 +1,18 @@
+{{ define "hero"}}
+  {{- partial "posts/hero.html" . -}}
+{{ end }}
+
 {{ define "main" }}
+  {{ partial "posts/schema" . }}
 
-  <code>SINGLE POST</code>
+  <div class="container">
 
-  <h1>{{ .Title }}</h1>
-  {{ range .Params.persons }}
-    {{- $person := site.GetPage (printf "/persons/%s" .) -}}
-    {{- with $person -}}
-    <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-    {{ end }}
-  {{ end }}
-
-  <div class="row">
-    <div class="col-md-8">
-      {{ .Content }}
+    <div class="row">
+      {{ partial "posts/title" . }}
+      {{ partial "posts/content" . }}
+      {{ partial "posts/sidebar" . }}
     </div>
-    <div class="col-md-4">
-      <time>{{ .Date }}</time>
-      <ul>
-        {{ with .Params.cite }}
-          <li><a href="{{ .url }}">{{ .Title }}</a></li>
-        {{ end }}
-      </ul>
-    </div>
+
   </div>
 
 {{ end }}
