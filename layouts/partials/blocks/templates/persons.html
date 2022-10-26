@@ -1,0 +1,16 @@
+<section class="block-persons">
+  <div class="container">
+    
+    {{ with .title }}
+      <header class="title">
+        <h2>{{ partial "PrepareHTML" . }}</h2>
+        {{ $index := site.GetPage "/persons" }}
+        <a href="{{ $index.Permalink }}" class="more">{{ i18n "more" }}</a>
+      </header>
+    {{ end }}
+    {{ with first 3 ( where site.RegularPages "Section" "persons" ) }}
+      {{ partial "persons/items" . }}
+    {{ end }}
+
+  </div>
+</section>
