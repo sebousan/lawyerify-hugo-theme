@@ -4,8 +4,8 @@
 {{- end -}}
 
 {{- $seoDescription := "" -}}
-{{- if .Params.description -}}
-  {{- $seoDescription = partial "PrepareHTML" .Params.description -}}
+{{- with .Params.description -}}
+  {{- $seoDescription = partial "PrepareHTML" . -}}
 {{- end -}}
 
 {{- $seoImage := "" -}}
@@ -15,6 +15,12 @@
 {{- if os.FileExists "static/assets/images/share.jpg" -}}
   {{- $seoImage = printf "%sassets/images/share.jpg" site.BaseURL -}}
 {{- end -}}
+{{ with .Params.image -}}
+  {{ $image := resources.Get .src }}
+  {{ if $image}}
+    {{ $seoImage = $image.Permalink -}}
+  {{ end }}
+{{ end }}
 
 {{- $ogImage := $seoImage -}}
 {{- $twitterImage := $seoImage -}}

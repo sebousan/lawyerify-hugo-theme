@@ -1,0 +1,47 @@
+.toc
+    @include media-breakpoint-up(md)
+        position: sticky
+        top: $offset
+    > p
+        @extend .d-none
+        @extend .d-md-block
+        @extend .h5
+    > button
+        @extend .btn
+        @extend .btn-light
+        @extend .d-md-none
+        @extend .mb-3
+        &::before
+            @extend .icon
+            content: 'list'
+            margin-right: .5rem
+            vertical-align: bottom
+
+    nav 
+        width: 100%
+        ol, ul
+            font-size: px2rem(14)
+            padding-left: 1.125rem
+        
+    .offcanvas
+        @extend .offcanvas-md
+        @extend .offcanvas-end
+        @include media-breakpoint-up(md)
+            position: static
+            transform: none
+            transition: none
+            visibility: visible
+            width: auto
+            z-index: auto
+    .header
+        @extend .offcanvas-header
+        @extend .h5
+        button
+            @extend .btn-close
+    .title
+        @extend .offcanvas-title
+        @extend .h5
+    .content
+        @extend .offcanvas-body
+
+    

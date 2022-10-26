@@ -1,0 +1,37 @@
+article.person
+    @extend .card
+    .media
+        order: -1
+    .content
+        @extend .card-body
+    p
+        @extend .card-text
+    [itemprop="url"]
+        text-decoration: none
+    [itemprop="name"]
+        @extend .card-title
+        @extend .h5
+    [itemprop="description"]
+        @extend .small
+    a
+        @extend .stretched-link
+    .more
+        @extend .card-link
+        @extend .small
+        text-decoration: underline
+
+aside.person
+    > p
+        @extend .h5
+    article
+        background-color: $light
+        padding: $spacer
+    [itemprop="name"]
+        font-weight: $font-weight-bold
+        margin-bottom: .5rem 
+    [itemprop="description"]
+        @extend .small
+        margin-bottom: .5rem 
+    [itemprop="url"]
+        @extend .small
+

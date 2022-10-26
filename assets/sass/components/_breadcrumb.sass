@@ -1,0 +1,13 @@
+.breadcrumb-wrapper
+    @extend .border-bottom
+    @extend .border-top
+    nav
+        @extend .container
+    ol
+        @extend .breadcrumb
+    li
+        @extend .breadcrumb-item
+        font-size: $breadcrumb-font-size
+    [aria-current="page"]
+        @extend .active
+ 
