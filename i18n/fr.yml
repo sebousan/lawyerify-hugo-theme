@@ -1,17 +1,67 @@
-bar: Barreau de {{ .City }}
-contact:
+authors:
+  discover: Découvrir l’auteur
+  title:
+    one: Auteur
+    other: Auteurs
+breadcrumb: fil d’Arianne
+categories:
+  title:
+    one: Categorie
+    other: Categories
+contact: 
   email: E-mail
-  fax: Fax
-  letterbox: Toque
-  social:
-    linkedin: Linkedin
-    twitter: Twitter
-  telephone: Téléphone
+  instagram: Instagram
+  linkedin: Linkedin
+  title: Contact
+  twitter: Twitter
+  website: Site web
+filter: Filtrer
 header:
   accessibility:
     footer: Accéder au bas de la page
     main: Contenu principal
     menu: Navigation principale
+home: Accueil
+link:
+  blank: lien externe
+  blank_aria: « {{ .Title }} » - lien externe
+more: En savoir plus
 navigation:
+  close: Fermer
   main: Navigation principale
   menu: Menu
+page404:
+  title: Page introuvable
+  text: La page que vous recherchez n'existe pas ou a été déplacée.
+  cta: Retour à la page d’accueil
+pagination:
+  first: Première page
+  label: Pagination
+  last: Dernière page
+  next: Suivant
+  page: Page {{ .Number }}
+  previous: Précédent
+posts:
+  latest: Dernières actualités
+  list_author: Liste des actualités de l’auteur
+  more: Découvrir plus d’actualités
+  title:
+    one: Actualité
+    other: Actualités
+projects:
+  latest: Derniers projets
+  more: Découvrir plus de projets
+  title:
+    one: Projet
+    other: Projets
+reading_time:
+  one: Une minute de lecture
+  other: '{{.Time}} minutes de lecture'
+share:
+  share_on: Partager sur {{ .Website }}
+  title: Partager
+toc: Table des matières
+types:
+  title:
+    one: Type
+    other: Types

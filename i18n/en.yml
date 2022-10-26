@@ -1,0 +1,67 @@
+authors:
+  discover: Discover author
+  title:
+    one: Author
+    other: Authors
+breadcrumb: Breadcrumb
+categories:
+  title:
+    one: Category
+    other: Categories
+contact: 
+  email: Email
+  instagram: Instagram
+  linkedin: Linkedin
+  title: Contact
+  twitter: Twitter
+  website: Website
+filter: Filter
+header:
+  accessibility:
+    footer: Go to the bottom of the page
+    main: Main content
+    menu: Main navigation
+home: Home
+link:
+  blank: extern link
+  blank_aria: « {{ .Title }} » - extern link
+more: Read more
+navigation:
+  close: Close
+  main: Main navigation
+  menu: Menu
+page404:
+  title: Page not found
+  text: The page you are looking for doesn’t exist or has been moved.
+  cta: Back to home page
+pagination:
+  first: Première page
+  label: Pagination
+  last: Dernière page
+  next: Next
+  page: Page {{ .Number }}
+  previous: Previous
+posts:
+  latest: Latest news
+  list_author: News list of this author
+  more: Discover more news
+  title:
+    one: New
+    other: News
+projects:
+  latest: Latest projects
+  more: Discover more projects
+  title:
+    one: Project
+    other: Projects
+reading_time:
+  one: One minute to read
+  other: '{{.Time}} minutes to read'
+share:
+  share_on: Share on {{ .Website }}
+  title: Share
+toc: Table of contents
+types:
+  title:
+    one: Type
+    other: Types
