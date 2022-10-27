@@ -1,13 +1,10 @@
 <header role="banner">
-  <nav class="navbar" role="navigation" aria-label="{{ i18n "navigation.main" }}">
+  <nav role="navigation" aria-label="{{ i18n "navigation.main" }}">
     <div class="container">
-      {{/* partial "commons/logo.html" */}}
-      <a href="{{ site.BaseURL }}">{{ site.Title }}</a>
-      {{ if isset site.Data.menus "primary"}}
+      {{ partial "commons/logo.html" }}
+      {{ if site.Data.menu.primary }}
         {{ partial "header/button.html" }}
-        <div class="menu" id="navigation">
-
-        </div>
+        {{ partial "header/offcanvas.html" }}
       {{ end }}
     </div>
   </nav>
