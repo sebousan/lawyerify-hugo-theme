@@ -1,7 +1,7 @@
 <a href="{{ .Permalink }}" itemprop="url" class="content">
   {{ with .Params.statutes }}
     {{ with index site.Data.statutes . }}
-      <p>{{ partial "PrepareHTML" .title }} </p>
+      <p itemprop="jobTitle">{{ partial "PrepareHTML" .title }} </p>
     {{ end }}
   {{ end }}
   {{ with .Title }}
