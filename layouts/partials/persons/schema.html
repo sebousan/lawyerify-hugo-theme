@@ -5,7 +5,7 @@
     "name": {{ .Title | plainify | safeHTML }},
     {{ with .Params.statutes }}
       {{ with index site.Data.statutes . }}
-        "jobTitle": {{ . | plainify | safeHTML }},
+        "jobTitle": {{ .title | plainify | safeHTML }},
       {{ end }}
     {{ end }}
     {{ with .Params.contact }}

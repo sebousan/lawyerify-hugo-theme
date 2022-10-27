@@ -1,8 +1,5 @@
+{{ $slug := .Title | urlize }}
 <div class="content">
-  {{ with .Params.description }}
-    <p itemprop="description">{{ partial "PrepareHTML" . }}</p>
-  {{ end }}
-          
   {{ with .Params.image}}
     {{ partial "commons/image.html" (dict
       "src" .src
@@ -18,4 +15,12 @@
       {{ partial "PrepareHTML" . }}
     </div>
   {{ end }}
+
+  {{ $pages := where site.RegularPages "Section" "posts" }}
+  {{ $pages := $pages | intersect (where site.RegularPages "Params.persons" "intersect" (slice $slug) ) }}
+  {{ if $pages }}
+    <h2>Actualité de {{ .Title }}</h2>
+    {{ partial "posts/items" $pages }}
+  {{ end }}
+
 </div>

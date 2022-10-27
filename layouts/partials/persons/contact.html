@@ -7,10 +7,10 @@
           <li><a href="mailto:{{ . }}" target="_blank">{{ i18n "contact.email" }}</a></li>
         {{ end }}
         {{ with .phone }}
-          <li><a href="tel:{{ . }}" target="_blank">{{ . }}</a></li>
+          <li><a href="tel:{{ . }}" target="_blank">{{ i18n "contact.phone" }} {{ . }}</a></li>
         {{ end }}
         {{ with .fax }}
-          <li>{{ . }}</li>
+          <li>{{ i18n "contact.fax" }} {{ . }}</li>
         {{ end }}
         {{ with .linkedin }}
           <li><a href="{{ . }}" target="_blank">{{ i18n "contact.linkedin" }}</a></li>

@@ -9,7 +9,7 @@
       </header>
     {{ end }}
     
-    {{ with first 3 ( where site.Pages "Section" "persons" ) }}
+    {{ with first 3 ( where site.RegularPages "Section" "persons" ) }}
       {{ partial "persons/items" . }}
     {{ end }}
 
