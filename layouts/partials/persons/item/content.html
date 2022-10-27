@@ -1,9 +1,13 @@
 <a href="{{ .Permalink }}" itemprop="url" class="content">
+  {{ with .Params.statutes }}
+    {{ with index site.Data.statutes . }}
+      <p>{{ partial "PrepareHTML" .title }} </p>
+    {{ end }}
+  {{ end }}
   {{ with .Title }}
     <p itemprop="name">{{ partial "PrepareHTML" . }}</p>
   {{ end }}
   {{ with .Params.description }}
     <p itemprop="description">{{ partial "TruncateContent" (partial "PrepareHTML" .) }}</p>
   {{ end }}
-  <p class="more">{{ i18n "authors.discover" }}</p>
 </a>

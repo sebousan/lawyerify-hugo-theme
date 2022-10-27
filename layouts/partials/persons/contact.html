@@ -1,22 +1,24 @@
-{{ if or .Params.contact.email .Params.contact.phone .Params.contact .fax.Params.contact.linkedin .Params.contact.twitter }}
-  <aside class="contact-list">
-    <p>{{ i18n "contact.title" }}</p>
-    <ul>
-      {{ with .Params.contact.email }}
-        <li><a href="mailto:{{ . }}" target="_blank">{{ i18n "contact.email" }}</a></li>
-      {{ end }}
-      {{ with .Params.contact.phone }}
-        <li><a href="tel:{{ . }}" target="_blank">{{ . }}</a></li>
-      {{ end }}
-      {{ with .Params.contact.fax }}
-        <li>{{ . }}</li>
-      {{ end }}
-      {{ with .Params.contact.linkedin }}
-        <li><a href="{{ . }}" target="_blank">{{ i18n "contact.linkedin" }}</a></li>
-      {{ end }}
-      {{ with .Params.contact.twitter }}
-        <li><a href="{{ . }}" target="_blank">{{ i18n "contact.twitter" }}</a></li>
-      {{ end }}
-    </ul>
-  </aside>
+{{ with .Params.contact }}
+  {{ if or .email .phone .fax .linkedin .twitter }}
+    <aside class="contact-list">
+      <p>{{ i18n "contact.title" }}</p>
+      <ul>
+        {{ with .email }}
+          <li><a href="mailto:{{ . }}" target="_blank">{{ i18n "contact.email" }}</a></li>
+        {{ end }}
+        {{ with .phone }}
+          <li><a href="tel:{{ . }}" target="_blank">{{ . }}</a></li>
+        {{ end }}
+        {{ with .fax }}
+          <li>{{ . }}</li>
+        {{ end }}
+        {{ with .linkedin }}
+          <li><a href="{{ . }}" target="_blank">{{ i18n "contact.linkedin" }}</a></li>
+        {{ end }}
+        {{ with .twitter }}
+          <li><a href="{{ . }}" target="_blank">{{ i18n "contact.twitter" }}</a></li>
+        {{ end }}
+      </ul>
+    </aside>
+  {{ end }}
 {{ end }}
