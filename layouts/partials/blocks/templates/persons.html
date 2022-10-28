@@ -8,10 +8,11 @@
         <a href="{{ $index.Permalink }}" class="more">{{ i18n "more" }}</a>
       </header>
     {{ end }}
-    
-    {{ with first 3 ( where site.RegularPages "Section" "persons" ) }}
-      {{ partial "persons/items" . }}
-    {{ end }}
+
+    {{ $statutes := "associate" }}
+    {{ $pages := where site.RegularPages "Section" "persons" }}
+    {{ $pages := $pages | intersect (where site.RegularPages "Params.statutes" "==" $statutes ) }}
+    {{ partial "persons/items" $pages }}
 
   </div>
 </section>
