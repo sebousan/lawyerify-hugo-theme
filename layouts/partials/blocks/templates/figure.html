@@ -1,19 +1,21 @@
-{{ $src := .image.src | default false }}
-{{ $alt := .image.alt | default false }}
-{{ $link := .link | default false }}
-{{ $title := .title | default false }}
-{{ $credits := .credits | default false }}
+{{ if .image }}
+  {{ $src := .image.src | default false }}
+  {{ $alt := .image.alt | default false }}
+  {{ $link := .link | default false }}
+  {{ $title := .title | default false }}
+  {{ $credits := .credits | default false }}
 
-<section class="block-figure">
-  <div class="container">
-    
-    {{ partial "commons/figure" (dict
-      "src" $src 
-      "alt" $alt 
-      "link" $link 
-      "title" $title 
-      "credits" $credits 
-      ) }}
+  <section class="block-figure{{ with .background }} block-bg{{ end }}">
+    <div class="container">
+      
+      {{ partial "commons/figure" (dict
+        "src" $src 
+        "alt" $alt 
+        "link" $link 
+        "title" $title 
+        "credits" $credits 
+        ) }}
 
-  </div>
-</section>
+    </div>
+  </section>
+{{ end }}

@@ -1,18 +1,19 @@
-<section class="block-persons">
+<section class="block-persons{{ with .background }} block-bg{{ end }}">
   <div class="container">
     
-    {{ with .title }}
-      <header class="title">
-        <h2>{{ partial "PrepareHTML" . }}</h2>
-        {{ $index := site.GetPage "/persons" }}
-        <a href="{{ $index.Permalink }}" class="more">{{ i18n "more" }}</a>
-      </header>
-    {{ end }}
+    {{ partial "blocks/heading.html" . }}
 
     {{ $statutes := "associate" }}
     {{ $pages := where site.RegularPages "Section" "persons" }}
     {{ $pages := $pages | intersect (where site.RegularPages "Params.statutes" "==" $statutes ) }}
     {{ partial "persons/items" $pages }}
+    
+    {{ $index := site.GetPage "/persons" }}
+    {{ with $index }}
+      <div class="bottom">
+        <a href="{{ .Permalink }}" class="more">{{ i18n "more" }}</a>
+      </div>
+    {{ end }}
 
   </div>
 </section>
