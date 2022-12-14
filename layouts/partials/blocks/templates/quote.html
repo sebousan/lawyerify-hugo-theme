@@ -1,11 +1,11 @@
-<figure class="block-quote">
+<figure class="block-quote{{ with .background }} block-bg{{ end }}">
   <div class="container">
     <div class="row">
 
       <div class="content">
         {{ with .text}}
         <blockquote>
-          {{ partial "PrepareHTML" . }}
+          <p>{{ partial "PrepareHTML" . }}</p>
         </blockquote>
         {{ end }}
 

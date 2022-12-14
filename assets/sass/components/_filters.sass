@@ -1,5 +1,4 @@
 .filters
-    @extend .offcanvas
     @extend .offcanvas-end
     .header
         @extend .offcanvas-header
@@ -10,3 +9,24 @@
             @extend .btn-close
     .content
         @extend .offcanvas-body
+        div
+            &:not(:first-child)
+                padding-top: calc(#{$global-spacing} / 2)
+            &:not(:last-child)
+                border-bottom: 1px solid $border-color
+                padding-bottom: calc(#{$global-spacing} / 2)
+        .list
+            p::before
+                margin-right: .25em
+            &-tags
+                @extend .tags
+                border-top: 0
+                margin-top: 0
+                p::before
+                    @include icon("tags")
+            &-categories
+                p::before
+                    @include icon("bookmarks")
+            &-authors
+                p::before
+                    @include icon("person-badge")

@@ -1,4 +1,5 @@
 .pagination
+    justify-content: center
     li
         @extend .page-item
     a
@@ -6,24 +7,57 @@
         line-height: 1
         height: 100%
 
-    .first,
-    .last,
-    .next,
-    .previous
-        &::before
-            @extend .icon
-            display: block
-            font-size: px2rem(16)
-            line-height: 1
-    .first
-        &::before
-            content: 'first_page'
-    .last
-        &::before
-            content: 'last_page'
-    .next
-        &::before
-            content: 'navigate_next'
-    .previous
-        &::before
-            content: 'navigate_before'
+    @if variable-exists(bootstrap-icons-map)
+        .first
+            &::before
+                @include icon("chevron-bar-left")
+                display: block
+                font-size: px2rem(16)
+                line-height: 1
+        .last
+            &::after
+                @include icon("chevron-bar-right")
+                display: block
+                font-size: px2rem(16)
+                line-height: 1
+        .next
+            &::after
+                @include icon("chevron-right")
+                display: block
+                font-size: px2rem(16)
+                line-height: 1
+        .previous
+            &::before
+                @include icon("chevron-left")
+                display: block
+                font-size: px2rem(16)
+                line-height: 1
+
+.pagination-between
+    --bs-pagination-bg: transparent
+    --bs-pagination-border-radius: 0
+    --bs-pagination-hover-bg: transparent
+    --bs-pagination-focus-bg: transparent
+    @extend .pagination
+    margin-top: $grid-gutter-width * 2
+    li
+        &:first-child
+            margin-right: .5rem
+        &:last-child
+            margin-left: .5rem
+        @include media-breakpoint-down(md)
+            span
+                display: none
+    a
+        border-width: 0
+        &:hover
+            text-decoration-line: underline 
+    .previous::before,
+    .next::after
+        display: inline-block
+        margin-top: -.2em
+        vertical-align: middle
+    .previous::before
+        margin-right: .5rem
+    .next::after
+        margin-left: .5rem

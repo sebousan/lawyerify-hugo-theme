@@ -1,17 +1,36 @@
 .hero
-    @extend .text-bg-primary
+    background-color: $header-background-color
     .container
+        @include rfs($global-spacing, padding-bottom)
+        @include rfs($global-spacing, padding-top)
         align-items: center
         display: flex
-        height: 400px
+        min-height: $hero-min-height
     .row
         align-items: center
-        width: 100%
+        flex-basis: calc(100% + var(--bs-gutter-x))
     &-content
+        @extend .col-12
         @extend .col-md-5
-        // @extend .offset-md-1
     &-media
         @extend .col-md-4
         @extend .offset-md-1
+        img
+            @extend .img-fluid
     .btn
-        @extend .btn-light
+        margin-top: $spacer
+    .btn:first-of-type
+        @extend .btn-primary
+    .btn + .btn
+        @extend .btn-outline-primary
+        margin-left: .5rem
+    @include media-breakpoint-down(md)
+        .cta
+            display: flex
+            flex-direction: column
+        .btn + .btn
+            margin-left: 0
+
+
+
+    

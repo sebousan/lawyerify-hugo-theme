@@ -1,6 +1,6 @@
 main
-    padding-bottom: map-get($spacers, 5)
-    padding-top: map-get($spacers, 5)
+    @include rfs($global-spacing, padding-bottom)
+    @include rfs($global-spacing, padding-top)
 
     .row >
         .content
@@ -13,8 +13,13 @@ main
                 order: 1
             .content
                 order: 3
+            .media
+                margin-bottom: $grid-gutter-width
+                order: 2
             .sidebar
                 order: 2
+            nav
+                order: 4
     
     // Offset for anchor with sticky header
     [id]

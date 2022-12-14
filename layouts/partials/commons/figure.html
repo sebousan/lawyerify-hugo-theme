@@ -1,21 +1,20 @@
-<figure>
-  {{ if .link }}
-    <a href="{{ .link }}">
-  {{ end }}
+<figure{{ if .figure_class }} class="{{.figure_class}}"{{ end }}>
   {{ if .src }}
     {{ partial "commons/image.html" (dict
           "src" .src
           "alt" .alt
-          "class" "img-fluid"
+          "desktop" .desktop
+          "mobile" .mobile
         ) }}
   {{ end }}
-  {{ if .link }}</a>{{ end }}
+  {{ if or .legend .credit }}
   <figcaption>
-    {{ with .title }}
+    {{ with .legend }}
       <p>{{ partial "PrepareHTML" . }}</p>
     {{ end }}
-    {{ with .credits }}
-      <p class="credits">{{ partial "PrepareHTML" . }}</p>
+    {{ with .credit }}
+      <p class="credit">{{ partial "PrepareHTML" . | markdownify }}</p>
     {{ end }}
   </figcaption>
+  {{ end }}
 </figure>

@@ -1,13 +1,26 @@
 .breadcrumb-wrapper
-    @extend .border-bottom
-    @extend .border-top
+    border-bottom: $border-width solid $border-color
+    border-top: $border-width solid $border-color
+    overflow: hidden
     nav
         @extend .container
+        overflow: auto
     ol
         @extend .breadcrumb
+        flex-wrap: nowrap
     li
         @extend .breadcrumb-item
+        flex-shrink: 0
         font-size: $breadcrumb-font-size
+        white-space: nowrap
+        @if variable-exists(bootstrap-icons-map)
+            &:first-child
+                &::before
+                    @include icon("house")
+                    margin-right: .2rem
+        &:last-child
+            padding-right: calc(var(--bs-gutter-x) * .5)
     [aria-current="page"]
         @extend .active
  
+

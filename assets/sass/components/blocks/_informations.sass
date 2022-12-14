@@ -1,0 +1,53 @@
+.block-informations
+    text-align: center
+    .items
+        @extend .row
+        @extend .gy-4
+        justify-content: center
+        > *
+            @extend .col
+
+        @for $i from 2 through 6
+            &-#{$i}
+                @extend .row-cols-md-#{$i - 1}
+                @extend .row-cols-lg-#{$i}
+        
+        &:not(.items-1)
+            @include scroll-snap
+
+    .card
+        --bs-card-spacer-y: 1.5rem
+        --bs-card-spacer-x: 1.5rem
+        background-color: $gray-200
+        border: 0
+        height: 100%
+        text-align: left
+        .media
+            background: transparent
+            padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x)
+            &-icon
+                > *
+                    position: static
+            &-image,
+            &-logo
+                @extend .ratio-21x9
+            &-logo
+                picture
+                    align-items: center
+                    display: flex
+                    justify-content: center
+                img
+                    border-radius: 0
+                    max-height: 70%
+                    max-width: 60%
+            &-image
+                img
+                    object-fit: cover
+            &-none
+                padding: 0
+    
+    .icon
+        font-size: 2rem
+
+    .btn
+        @extend .btn-primary

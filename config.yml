@@ -1,0 +1,43 @@
+params:
+  logo: 
+    header: "/assets/images/logo.svg"
+    footer: "/assets/images/logo.svg"
+  gutter: 24
+  container:
+    desktop: 1292
+    mobile: 336
+  image:
+    xlarge: "1600x"
+    desktop: "856x"
+    mobile: "336x"
+  persons:
+    thumbnail:
+      desktop: "100x100"
+    image:
+      desktop: "100x100"
+    post:
+      desktop: "50x50"
+  pages:
+    thumbnail:
+      desktop: "414x177"
+      mobile: "336x144"
+    image:
+      desktop: "856x"
+      mobile: "336x"
+  posts:
+    thumbnail:
+      desktop: "414x177"
+      mobile: "336x144"
+    image:
+      desktop: "856x"
+      mobile: "336x"
+  blocks:
+    editorial:
+      desktop: "624x"
+      mobile: "336x"
+    figure:
+      desktop: "1292x"
+      mobile: "336x"
+    gallery:
+      mobile: "336x"
+  

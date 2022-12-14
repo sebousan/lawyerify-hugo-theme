@@ -1,13 +1,28 @@
 header[role="banner"]
+    background-color: $header-background-color
     position: sticky
     top: 0
     z-index: $zindex-sticky
     > nav
         @extend .navbar
         @extend .navbar-expand-lg
-        background-color: $header-background-color
+    .btn-menu
+        @extend .navbar-toggler
+        border: 0
+        @include media-breakpoint-down(md)
+            margin-right: - $navbar-toggler-padding-x
+        > span
+            @extend .navbar-toggler-icon
     .nav-primary
         margin-left: auto
+        @include media-breakpoint-down(lg)
+            align-items: center
+            flex-direction: column
+            li
+                font-size: px2rem(20)
+        @include media-breakpoint-up(lg)
+            margin-right: - $nav-link-padding-x
+
     .offcanvas
         @extend .offcanvas-end
         .header

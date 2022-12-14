@@ -1,0 +1,16 @@
+.images
+    @include media-breakpoint-up(md)
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      .half
+          width: calc(50% - (#{$grid-gutter-width} / 2))
+    picture
+      display: block
+    figure,
+    picture
+      margin-bottom: $grid-gutter-width
+    figure picture
+      margin-bottom: 0
+    img
+        @extend .img-fluid

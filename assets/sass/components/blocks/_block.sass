@@ -1,0 +1,21 @@
+/*! purgecss start ignore */
+[class*="block-"]
+    @include rfs($global-spacing, padding-bottom)
+    @include rfs($global-spacing, padding-top)
+    .heading
+        @include media-breakpoint-up(lg)
+            align-items: center
+            flex-direction: column
+            margin-left: auto
+            margin-bottom: $global-spacing
+            margin-right: auto
+            max-width: 66%
+            text-align: center
+        h2 + p
+            margin-top: $headings-margin-bottom
+    .bottom
+        text-align: center
+
+.block-bg
+    background-color: $light
+/*! purgecss end ignore */

@@ -1,0 +1,25 @@
+.card
+    .media
+        @extend .card-img-top
+        @extend .ratio
+        background-color: $light
+        order: -1
+        overflow: hidden
+        img
+            @extend .card-img-top
+            height: 100%
+            object-fit: contain
+    .content
+        @extend .card-body
+    .cta
+        @extend .btn
+    .name
+        @extend .card-title
+        @extend .h5
+    p
+        @extend .card-text
+    time
+        @extend .small
+        @extend .text-muted
+    > a
+        text-decoration: none

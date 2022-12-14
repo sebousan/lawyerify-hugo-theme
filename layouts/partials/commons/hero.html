@@ -1,31 +1,40 @@
-{{ $image := .Params.image }}
 {{ with .Params.hero }}
-  {{ if or .title .text }}
-    <header class="hero">
-      <div class="container">
-        <div class="row">
+{{ if or (and (.title) (ne .title "")) (and (.text) (ne .text "")) }}
+<header class="hero">
+  <div class="container">
+    <div class="row">
 
-          <div class="hero-content">
-            {{ with .title }}
-              <h1>{{ . }}</h1>
+      <div class="hero-content">
+        {{ with .title }}
+          <h1>{{ . }}</h1>
+        {{ end }}
+        {{ with .text }}
+          <p>{{ . | markdownify }}</p>
+        {{ end }}
+        {{ if .cta }}
+          <div class="cta" {{ if .cta_second }}role="group"{{ end }}>
+            {{ with .cta }}
+              {{ partial "commons/cta.html" . }}
             {{ end }}
-            {{ with .text }}
-              <p>{{ . }}</p>
+            {{ with .cta_second }}
+              {{ partial "commons/cta.html" . }}
             {{ end }}
-            {{ partial "commons/cta" .cta }}
           </div>
-
-          {{ with $image }}
-            <div class="hero-media">
-              {{ partial "commons/image.html" (dict
-                  "src" .src
-                  "alt" .alt
-              ) }}
-            </div>
-          {{ end }}
-
-        </div>
+        {{ end }}
       </div>
-    </header>
-  {{ end }}
+
+      {{ with .image }}
+        <div class="hero-media">
+          {{ partial "commons/image.html" (dict
+              "src" .src
+              "alt" .alt
+              "lazy" false
+          ) }}
+        </div>
+      {{ end }}
+
+    </div>
+  </div>
+</header>
+{{ end }}
 {{ end }}

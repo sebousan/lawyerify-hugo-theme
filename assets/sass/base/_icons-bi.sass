@@ -1,0 +1,29 @@
+/*! purgecss start ignore */
+// Font icons: https://icons.getbootstrap.com/
+@font-face
+    font-display: block
+    font-family: "bootstrap-icons"
+    src: url("../fonts/bootstrap-icons/bootstrap-icons.woff2") format("woff2"), url("../fonts/bootstrap-icons/bootstrap-icons.woff") format("woff");
+
+// Variables
+@import "icons-bi-var"
+
+// Mixin
+@mixin icon($icon: "")
+    @if $icon != ""
+        content: map-get($bootstrap-icons-map, $icon)
+    display: inline-block
+    font-family: bootstrap-icons
+    font-style: normal
+    font-variant: normal
+    font-weight: normal
+    line-height: 1
+    text-transform: none
+    vertical-align: -0.125em
+
+// Class
+@each $name, $glyph in $bootstrap-icons-map
+    .icon-#{$name}
+        &::before
+            @include icon($name)
+/*! purgecss end ignore */

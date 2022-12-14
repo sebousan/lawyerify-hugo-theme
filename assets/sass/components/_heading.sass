@@ -1,0 +1,31 @@
+.heading
+    @include rfs(calc(#{$global-spacing} / 2), margin-bottom)
+    align-items: baseline
+    display: flex
+    flex-wrap: wrap
+    @include media-breakpoint-down(md)
+        &:not(.heading-filter)
+            flex-direction: column
+            .more
+                margin-left: 0
+    h1
+        margin-bottom: 0
+
+    @include media-breakpoint-up(md)
+        h2,
+        p
+            margin-bottom: 0
+        .metas
+            margin-top: 1rem
+            width: 100%
+    .btn,
+    .more
+        margin-left: auto
+    @if variable-exists(bootstrap-icons-map)
+        .more
+            &::before
+                @include icon("arrow-right")
+                font-size: px2rem(16)
+                margin-right: .25rem
+                vertical-align: middle
+            

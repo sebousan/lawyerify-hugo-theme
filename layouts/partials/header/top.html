@@ -1,0 +1,11 @@
+{{ with site.Data.top }}
+  {{ if ne .text "" }}
+    <div class="top top-{{ .state }}" role="alert">
+      <div class="container">
+        {{ with .text }}
+          <p>{{ . | markdownify }}</p>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+{{ end }}
