@@ -1,22 +1,16 @@
 .page
+    --bs-card-spacer-x: 0
+    --bs-card-border-width: 0
+    --bs-card-border-radius: 0
+    --bs-card-inner-border-radius: 0
+    --bs-card-bg: transparent
+    --bs-card-cap-bg: transparent
+    --bs-card-cap-padding-x: 0
+    --bs-card-cap-padding-y: 0
     @extend .card
     .media
-        @extend .card-img-top
-        @extend .ratio
-        @extend .ratio-21x9
-        background-color: $light
-        order: -1
-    .content
-        @extend .card-body
-    p
-        @extend .card-text
-    [itemprop="url"]
-        text-decoration: none
-    [itemprop="name"]
-        @extend .card-title
-        @extend .h5
+        --bs-aspect-ratio: 43%
     a
         @extend .stretched-link
     .cta
-        @extend .btn
         @extend .btn-primary

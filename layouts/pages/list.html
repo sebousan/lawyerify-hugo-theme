@@ -1,8 +1,13 @@
 {{ define "hero"}}
-  {{- partial "commons/hero.html" . -}}
+  {{- partial "pages/hero.html" . -}}
 {{ end }}
 
 {{ define "main" }}
   {{ partial "pages/schema" . }}
-  {{ partial "pages/content" . }}
+
+  {{ partial "pages/heading" . }}
+
+  {{ partial "blocks/list" . }}
+
+  {{ partial "pages/main" . }}
 {{ end }}

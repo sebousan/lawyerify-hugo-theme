@@ -1,13 +1,5 @@
 <a href="{{ .Permalink }}" itemprop="url" class="content">
-  {{ with .Params.statutes }}
-    {{ with index site.Data.statutes . }}
-      <p itemprop="jobTitle">{{ partial "PrepareHTML" .title }} </p>
-    {{ end }}
-  {{ end }}
-  {{ with .Title }}
-    <p itemprop="name">{{ partial "PrepareHTML" . }}</p>
-  {{ end }}
-  {{ with .Params.description }}
-    <p itemprop="description">{{ partial "TruncateContent" (partial "PrepareHTML" .) }}</p>
-  {{ end }}
+  {{ partial "persons/item/statutes" . }}
+  {{ partial "commons/item/title" . }}
+  {{ partial "commons/item/description" . }}
 </a>

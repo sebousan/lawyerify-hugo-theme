@@ -1,40 +1,22 @@
-article.person
+.person
+    --bs-card-spacer-x: 0
+    --bs-card-border-width: 0
+    --bs-card-border-radius: 0
+    --bs-card-inner-border-radius: 0
+    --bs-card-bg: transparent
+    --bs-card-cap-bg: transparent
     @extend .card
-    .media
-        order: -1
-    .content
-        @extend .card-body
-    p
-        @extend .card-text
-    [itemprop="url"]
-        text-decoration: none
-    [itemprop="jobTitle"]
+    .status
         @extend .small
         margin-bottom: 0
-    [itemprop="name"]
-        @extend .card-title
-        @extend .h5
-    [itemprop="description"]
+    .description
         @extend .small
     a
         @extend .stretched-link
-    .more
-        @extend .card-link
-        @extend .small
-        text-decoration: underline
-
-aside.person
-    > p
-        @extend .h5
-    article
-        background-color: $light
-        padding: $spacer
-    [itemprop="name"]
-        font-weight: $font-weight-bold
-        margin-bottom: .5rem 
-    [itemprop="description"]
-        @extend .small
-        margin-bottom: .5rem 
-    [itemprop="url"]
-        @extend .small
-
+        & + div
+            @extend .ratio
+            @extend .ratio-1x1
+            align-self: flex-start
+            background-color: $light
+            border-radius: 50%
+            order: -1

@@ -1,0 +1,5 @@
+{{ with .Params.statutes }}
+  {{ with index site.Data.statutes . }}
+    <p class="status" itemprop="jobTitle">{{ partial "PrepareHTML" .title }} </p>
+  {{ end }}
+{{ end }}

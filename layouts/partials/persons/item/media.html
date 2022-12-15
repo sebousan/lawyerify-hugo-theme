@@ -1,0 +1,13 @@
+{{ $desktop := site.Params.persons.thumbnail.desktop | default false }}
+{{ $w := printf "width: %spx" (index (split $desktop "x") 0 | default 100)  }}
+<div style="{{ $w }}">
+  {{- with .Params.image}}
+    {{ partial "commons/image.html" (dict
+      "src" .src
+      "alt" .alt
+      "desktop" $desktop
+      "picture_class" "avatar"
+      "crop" "top"
+    ) }}
+  {{ end -}}
+</div>

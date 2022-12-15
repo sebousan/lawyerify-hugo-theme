@@ -1,7 +1,17 @@
 .page-posts
-    main > .container > .row >
-        .content
-            @extend .col-md-8
-        .sidebar
-            @extend .col-md-3
-            @extend .offset-md-1
+    .tags
+        border-top: 1px solid $border-color
+        margin-top: $global-spacing
+        padding-top: calc(#{$global-spacing} / 2)
+        p
+            @extend .h5
+
+    @include media-breakpoint-up(md)
+        .grid
+            >
+                .content
+                    grid-row: 2/4
+                .sidebar
+                    grid-row: 2
+                .toc
+                    grid-row: 3/5

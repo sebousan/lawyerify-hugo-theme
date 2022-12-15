@@ -11,12 +11,16 @@ categories:
 contact: 
   email: E-mail
   fax: Fax
+  facebook: Facebook
   instagram: Instagram
   linkedin: Linkedin
-  phone: Téléphone
+  pinterest: Pinterest
   title: Contact
   twitter: Twitter
   website: Site web
+  whatsapp: WhatsApp
+credit:
+  hugolify: un site éco-conçu produit avec <a href="https://www.lawyerify.fr" target="_blank">Lawyerify</a>
 filter: Filtrer
 header:
   accessibility:
@@ -37,12 +41,15 @@ page404:
   text: La page que vous recherchez n'existe pas ou a été déplacée.
   cta: Retour à la page d’accueil
 pagination:
+  between: Pagination entre {{ .Section }}
   first: Première page
   label: Pagination
   last: Dernière page
   next: Suivant
+  next_section: "<span>{{ .Section }}</span> suivant"
   page: Page {{ .Number }}
   previous: Précédent
+  previous_section: "<span>{{ .Section }}</span> précédent"
 posts:
   latest: Dernières actualités
   list_author: Liste des actualités de l’auteur
@@ -50,20 +57,14 @@ posts:
   title:
     one: Actualité
     other: Actualités
-projects:
-  latest: Derniers projets
-  more: Découvrir plus de projets
-  title:
-    one: Projet
-    other: Projets
 reading_time:
   one: Une minute de lecture
   other: '{{.Time}} minutes de lecture'
 share:
   share_on: Partager sur {{ .Website }}
   title: Partager
-toc: Table des matières
-types:
+tags:
   title:
-    one: Type
-    other: Types
+    one: Tag
+    other: Tags
+toc: Table des matières

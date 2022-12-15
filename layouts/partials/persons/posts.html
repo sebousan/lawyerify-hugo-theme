@@ -1,0 +1,16 @@
+{{ if .Pages }}
+  <hr>
+  <header class="heading">
+    <h2>{{ i18n "posts.list_author" }}</h2>
+  </header>
+  {{ $paginator := (.Paginator 9).Pages }}
+  {{ partial "posts/items" $paginator }}
+  {{ partial "nav/pagination.html" . }}
+{{ else }}
+  {{ $pages := where site.RegularPages "Section" "posts" }}
+  {{ $pages := $pages | intersect (where site.RegularPages "Params.persons" "intersect" (slice .Title) ) }}
+  {{ if $pages }}
+    <h2>Actualité de {{ .Title }}</h2>
+    {{ partial "posts/items" $pages }}
+  {{ end }}
+{{ end }}

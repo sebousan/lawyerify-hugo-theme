@@ -10,13 +10,17 @@ categories:
     other: Categories
 contact: 
   email: Email
-  fax: Fax number
+  fax: Fax
+  facebook: Facebook
   instagram: Instagram
   linkedin: Linkedin
-  phone: Telephone
+  pinterest: Pinterest
   title: Contact
   twitter: Twitter
   website: Website
+  whatsapp: WhatsApp
+credit:
+  hugolify: a low impact website crafted with <a href="https://www.lawyerify.io" target="_blank">Lawyerify</a>
 filter: Filter
 header:
   accessibility:
@@ -37,12 +41,15 @@ page404:
   text: The page you are looking for doesn’t exist or has been moved.
   cta: Back to home page
 pagination:
-  first: Première page
+  between: Pagination between {{ .Section }}
+  first: First page
   label: Pagination
-  last: Dernière page
+  last: Last page
   next: Next
+  next_section: Next <span>{{ .Section }}</span>
   page: Page {{ .Number }}
   previous: Previous
+  previous_section: Previous <span>{{ .Section }}</span>
 posts:
   latest: Latest news
   list_author: News list of this author
@@ -50,20 +57,14 @@ posts:
   title:
     one: New
     other: News
-projects:
-  latest: Latest projects
-  more: Discover more projects
-  title:
-    one: Project
-    other: Projects
 reading_time:
   one: One minute to read
   other: '{{.Time}} minutes to read'
 share:
   share_on: Share on {{ .Website }}
   title: Share
-toc: Table of contents
-types:
+tags:
   title:
-    one: Type
-    other: Types
+    one: Tag
+    other: Tags
+toc: Table of contents

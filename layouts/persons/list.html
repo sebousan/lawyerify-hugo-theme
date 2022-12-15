@@ -4,9 +4,11 @@
 
 {{ define "main" }}
 
+  {{ partial "blocks/list" . }}
+  
   <div class="container">
 
-    {{ partial "persons/title" . }}
+    {{ partial "persons/heading" . }}
 
     {{ with .Pages }}
       {{ partial "persons/items.html" . }}

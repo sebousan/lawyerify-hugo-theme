@@ -6,13 +6,6 @@
   {{ partial "posts/schema" . }}
 
   <div class="container">
-
-    <div class="row">
-      {{ partial "posts/title" . }}
-      {{ partial "posts/content" . }}
-      {{ partial "posts/sidebar" . }}
-    </div>
-
+    {{ partial "posts/grid" . }}
   </div>
-
 {{ end }}
