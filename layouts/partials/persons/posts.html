@@ -1,16 +1,20 @@
-{{ if .Pages }}
-  <hr>
-  <header class="heading">
-    <h2>{{ i18n "posts.list_author" }}</h2>
-  </header>
-  {{ $paginator := (.Paginator 9).Pages }}
-  {{ partial "posts/items" $paginator }}
-  {{ partial "nav/pagination.html" . }}
-{{ else }}
-  {{ $pages := where site.RegularPages "Section" "posts" }}
-  {{ $pages := $pages | intersect (where site.RegularPages "Params.persons" "intersect" (slice .Title) ) }}
-  {{ if $pages }}
-    <h2>Actualité de {{ .Title }}</h2>
+{{ $title := .Title }}
+{{ $pages := where site.RegularPages "Section" "posts" }}
+{{ $pages = $pages | intersect (where site.RegularPages "Params.authors" "intersect" (slice $title) ) }}
+{{ $count := $pages | len }}
+
+{{ if $pages }}
+  <section>
+    <header class="heading">
+      {{ $heading := i18n "posts.latest_author" (dict "Author" $title) }}
+      <h2>{{ $heading }}</h2>
+      {{ if gt $count 0 }}
+      {{ $item := partial "GetTaxonomy" (dict "slug" $title "taxonomy" "authors") }}
+        {{ with $item }}
+          <a href="{{ .Permalink }}" class="more">{{ i18n "posts.more" }}</a>
+        {{ end }}
+      {{ end }}
+    </header>
     {{ partial "posts/items" $pages }}
-  {{ end }}
+  </section>
 {{ end }}
