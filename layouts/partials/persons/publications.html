@@ -1,0 +1,20 @@
+{{ $title := .Title }}
+{{ $pages := where site.RegularPages "Section" "publications" }}
+{{ $pages = $pages | intersect (where site.RegularPages "Params.quoters" "intersect" (slice $title) ) }}
+{{ $count := $pages | len }}
+
+{{ if $pages }}
+  <section>
+    <header class="heading">
+      {{ $heading := i18n "publications.latest_author" (dict "Author" $title) }}
+      <h2>{{ $heading }}</h2>
+      {{ if gt $count 0 }}
+      {{ $item := partial "GetTaxonomy" (dict "slug" $title "taxonomy" "quoters") }}
+        {{ with $item }}
+          <a href="{{ .Permalink }}" class="more">{{ i18n "publications.more" }}</a>
+        {{ end }}
+      {{ end }}
+    </header>
+    {{ partial "publications/items" $pages }}
+  </section>
+{{ end }}

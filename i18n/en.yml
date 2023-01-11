@@ -52,11 +52,13 @@ pagination:
   previous_section: Previous <span>{{ .Section }}</span>
 posts:
   latest: Latest news
+  latest_author: Latest news of {{ .Author }}
   list_author: News list of this author
   more: Discover more news
   title:
     one: New
     other: News
+  title_author: News of {{ .Author }}
 reading_time:
   one: One minute to read
   other: '{{.Time}} minutes to read'

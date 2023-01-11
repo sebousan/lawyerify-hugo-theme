@@ -52,11 +52,27 @@ pagination:
   previous_section: "<span>{{ .Section }}</span> précédent"
 posts:
   latest: Dernières actualités
+  latest_author: Dernières actualités de {{ .Author }}
   list_author: Liste des actualités de l’auteur
   more: Découvrir plus d’actualités
   title:
     one: Actualité
     other: Actualités
+  title_author: Actualités de {{ .Author }}
+publications:
+  latest: Dernières parutions
+  latest_author: Dernières parutions de {{ .Author }}
+  list_author: Liste des parutions de l’auteur
+  more: Découvrir plus de parutions
+  title:
+    one: Parution
+    other: Parutions
+  title_author: Parutions de {{ .Author }}
+quoters:
+  discover: Découvrir la personne citée
+  title:
+    one: Personnes citée
+    other: Personnes citées
 reading_time:
   one: Une minute de lecture
   other: '{{.Time}} minutes de lecture'
