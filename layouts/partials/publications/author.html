@@ -1,7 +1,0 @@
-{{ range .Params.persons }}
-  {{ $author := where site.Pages "Title" "eq" .  }}
-  {{ with $author }}
-    {{.}}
-    
-  {{ end }}
-{{ end }}

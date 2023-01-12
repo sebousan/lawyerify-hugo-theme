@@ -2,6 +2,7 @@
 {{ $pages := where site.RegularPages "Section" "publications" }}
 {{ $pages = $pages | intersect (where site.RegularPages "Params.quoters" "intersect" (slice $title) ) }}
 {{ $count := $pages | len }}
+{{ $pages = first 3 $pages }}
 
 {{ if $pages }}
   <section>

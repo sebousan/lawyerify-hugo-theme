@@ -17,6 +17,8 @@ params:
       desktop: "100x100"
     post:
       desktop: "50x50"
+    publication:
+      desktop: "50x50"
   pages:
     thumbnail:
       desktop: "414x177"
