@@ -1,6 +1,6 @@
 {{ range .Params.quoters }}
   {{ $quoter := where (where site.Pages "Section" "persons" ) "Title" "eq" . }}
   {{ range $quoter }}
-    {{ partial "commons/person" . }}
+    {{ partial "commons/person" (dict "person" . "type" "quoters") }}
   {{ end }}
 {{ end }}

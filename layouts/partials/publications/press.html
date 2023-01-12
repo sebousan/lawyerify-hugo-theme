@@ -1,0 +1,10 @@
+{{ with .Params.press }}
+  <div class="press">
+    <div class="content">
+      <h3>{{ .title }}</h3>
+      {{ $text := i18n "publications.press.more" }}
+      {{ $title := i18n "link.blank_aria" (dict "Title" $text) }}
+      <a href="{{ .url }}" class="btn" target="_blank" title="{{ $title }}">{{ $text }}</a>
+    </div>
+  </div>
+{{ end }}

@@ -1,6 +1,6 @@
 {{ range .Params.authors }}
   {{ $author := where (where site.Pages "Section" "persons" ) "Title" "eq" . }}
   {{ range $author }}
-    {{ partial "commons/person" . }}
+    {{ partial "commons/person" (dict "person" . "type" "authors") }}
   {{ end }}
 {{ end }}

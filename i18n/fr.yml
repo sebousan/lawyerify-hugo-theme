@@ -62,8 +62,10 @@ posts:
 publications:
   latest: Dernières parutions
   latest_author: Dernières parutions de {{ .Author }}
-  list_author: Liste des parutions de l’auteur
+  list_author: Liste des parutions de la personne citée
   more: Découvrir plus de parutions
+  press: 
+    more: Découvrir l’article complet
   title:
     one: Parution
     other: Parutions

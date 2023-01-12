@@ -1,23 +1,31 @@
-<aside class="author">
-  <div class="content">
-    {{ with .Title }}
-      <p class="name">{{ partial "PrepareHTML" . }}</p>
-    {{ end }}
-    {{ with .Params.description }}
-      <p class="description">{{ partial "TruncateContent" (partial "PrepareHTML" .) }}</p>
-    {{ end }}
-    <p><a href="{{ .Permalink }}">{{ i18n "authors.discover" }}</a></p>
-  </div>
-  {{ with .Params.image}}
-    {{ $desktop := site.Params.persons.post.desktop | default false }}
-    <div class="media">
-      {{ partial "commons/image.html" (dict
-        "src" .src
-        "alt" .alt
-        "desktop" $desktop
-        "picture_class" "avatar"
-        "crop" "top"
-      ) }}
+{{ $type := .type | default "authors" }}
+{{ with .person }}
+  <aside class="author">
+    <div class="content">
+      {{ with .Title }}
+        <p class="name">{{ partial "PrepareHTML" . }}</p>
+      {{ end }}
+      {{ with .Params.description }}
+        <p class="description">{{ partial "TruncateContent" (partial "PrepareHTML" .) }}</p>
+      {{ end }}
+      <p><a href="{{ .Permalink }}">{{ i18n (printf "%s.discover" $type) }}</a></p>
     </div>
-  {{ end }}
-</aside>
+    {{ with .Params.image}}
+      {{ $desktop := false }}
+      {{ if eq $type "quoters" }}
+        {{ $desktop = site.Params.persons.publication.desktop }}
+      {{ else }}
+        {{ $desktop = site.Params.persons.post.desktop }}
+      {{ end }}
+      <div class="media">
+        {{ partial "commons/image.html" (dict
+          "src" .src
+          "alt" .alt
+          "desktop" $desktop
+          "picture_class" "avatar"
+          "crop" "top"
+        ) }}
+      </div>
+    {{ end }}
+  </aside>
+{{ end }}
