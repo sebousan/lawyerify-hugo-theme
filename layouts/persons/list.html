@@ -7,13 +7,11 @@
   {{ partial "blocks/list" . }}
   
   <div class="container">
-
     {{ partial "persons/heading" . }}
 
-    {{ with .Pages }}
-      {{ partial "persons/items.html" . }}
-    {{ end }}
-
+    {{ $paginator := sort (.Paginator.Pages) "Params.statutes" }}
+    {{ partial "persons/items" $paginator }}
+    {{ partial "nav/pagination.html" . }}
   </div>
 
 {{ end }}

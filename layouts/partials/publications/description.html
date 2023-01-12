@@ -1,1 +1,3 @@
-{{ partial "commons/description.html" . }}
+{{ with .Description }}
+  <p class="description">{{ partial "LineBreak" . }}</p>
+{{ end }}

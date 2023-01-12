@@ -1,0 +1,20 @@
+{{ define "hero"}}
+  {{- partial "publications/hero.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+
+  {{ partial "blocks/list" . }}
+
+  <div class="container">
+
+    {{ partial "publications/heading" . }}
+    {{ partial "publications/filters" . }}
+
+    {{ $paginator := .Paginator.Pages }}
+    {{ partial "publications/items" $paginator }}
+    {{ partial "nav/pagination.html" . }}
+
+  </div>
+
+{{ end }}

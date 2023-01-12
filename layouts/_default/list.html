@@ -7,9 +7,10 @@
 
   <div class="container">
     {{ partial "commons/heading" . }}
-    {{ with .Pages }}
-      {{ partial "pages/items" . }}
-    {{ end }}
+
+    {{ $paginator := .Paginator.Pages }}
+    {{ partial "pages/items" $paginator }}
+    {{ partial "nav/pagination.html" . }}
   </div>
 
 {{ end }}

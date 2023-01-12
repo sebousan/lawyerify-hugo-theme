@@ -20,7 +20,7 @@ contact:
   website: Site web
   whatsapp: WhatsApp
 credit:
-  hugolify: un site éco-conçu produit avec <a href="https://www.lawyerify.fr" target="_blank">Lawyerify</a>
+  hugolify: un site éco-conçu produit avec <a href="https://www.lawyerify.fr" target="_blank" rel="noopener noreferrer" title="« Lawyerify » - lien externe">Lawyerify</a>
 filter: Filtrer
 header:
   accessibility:
@@ -62,7 +62,7 @@ posts:
 publications:
   latest: Dernières parutions
   latest_author: Dernières parutions de {{ .Author }}
-  list_author: Liste des parutions de la personne citée
+  list_author: Liste des parutions de la personne concernée
   more: Découvrir plus de parutions
   press: 
     more: Découvrir l’article complet
@@ -70,11 +70,11 @@ publications:
     one: Parution
     other: Parutions
   title_author: Parutions de {{ .Author }}
-quoters:
-  discover: Découvrir la personne citée
+concerned:
+  discover: Découvrir la personne concernée
   title:
-    one: Personnes citée
-    other: Personnes citées
+    one: Personnes concernée
+    other: Personnes concernées
 reading_time:
   one: Une minute de lecture
   other: '{{.Time}} minutes de lecture'
@@ -86,3 +86,4 @@ tags:
     one: Tag
     other: Tags
 toc: Table des matières
+with: Avec {{ .Persons }}

@@ -5,31 +5,31 @@
   <ul class="dropdown-menu">
     <li>
       {{ $name := i18n "contact.facebook" -}}
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | absURL }}" target="_blank" rel="noopener" title="{{ safeHTML (i18n "share.share_on" (dict "Website" $name )) }}">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | absURL }}" target="_blank" rel="noopener noreferrer" title="{{ safeHTML (i18n "share.share_on" (dict "Website" $name )) }}">
         {{- $name -}}
       </a>
     </li>
     <li>
       {{ $name := i18n "contact.twitter" -}}
-      <a href="https://twitter.com/intent/tweet?text={{ .Title }} {{ .Permalink | absURL }}" target="_blank" rel="noopener" title="{{ safeHTML (i18n "share.share_on" (dict "Website" $name )) }}">
+      <a href="https://twitter.com/intent/tweet?text={{ .Title }} {{ .Permalink | absURL }}" target="_blank" rel="noopener noreferrer" title="{{ safeHTML (i18n "share.share_on" (dict "Website" $name )) }}">
         {{- $name -}}
       </a>
     </li>
     <li>
       {{ $name := i18n "contact.linkedin" -}}
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink | absURL }}" target="_blank" rel="noopener" title="{{ safeHTML (i18n "share.share_on" (dict "Website" $name )) }}">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink | absURL }}" target="_blank" rel="noopener noreferrer" title="{{ safeHTML (i18n "share.share_on" (dict "Website" $name )) }}">
         {{- $name -}}
       </a>
     </li>
     <li>
       {{ $name := i18n "contact.pinterest" -}}
-      <a href="http://pinterest.com/pin/create/button/?url={{ .Permalink | absURL }}&description={{ .Title }}" target="_blank" rel="noopener" title="{{ safeHTML (i18n "share.share_on" (dict "Website" $name )) }}">
+      <a href="http://pinterest.com/pin/create/button/?url={{ .Permalink | absURL }}&description={{ .Title }}" target="_blank" rel="noopener noreferrer" title="{{ safeHTML (i18n "share.share_on" (dict "Website" $name )) }}">
         {{- $name -}}
       </a>
     </li>
     <li>
       {{ $name := i18n "contact.whatsapp" -}}
-      <a href="whatsapp://send?text={{ .Title }} {{ .Permalink | absURL }}" data-action="share/whatsapp/share" target="_blank" rel="noopener" title="{{ safeHTML (i18n "share.share_on" (dict "Website" $name )) }}">
+      <a href="whatsapp://send?text={{ .Title }} {{ .Permalink | absURL }}" data-action="share/whatsapp/share" target="_blank" rel="noopener noreferrer" title="{{ safeHTML (i18n "share.share_on" (dict "Website" $name )) }}">
         {{- $name -}}
       </a>
     </li>

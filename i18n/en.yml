@@ -70,3 +70,4 @@ tags:
     one: Tag
     other: Tags
 toc: Table of contents
+with: With {{ .Persons }}
