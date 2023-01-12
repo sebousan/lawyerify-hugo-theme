@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{ partial "head/css.html" . }}
+    {{ partialCached "head/css.html" . }}
     {{ partial "head/seo.html" . }}
     {{ partial "head/favicons.html" . }}
     {{ partial "head/rss.html" . }}
@@ -13,7 +13,7 @@
     {{- partialCached "commons/schema.html" . -}}
     {{- partialCached "nav/accessibility.html" . -}}
     {{- partialCached "header/top.html" . -}}
-    {{- partial "header/header.html" . -}}
+    {{- partialCached "header/header.html" . .Section -}}
     {{- block "hero" . }}{{- end }}
     <main id="main" role="main" tabindex="-1">
       {{- block "main" . }}{{- end }}
