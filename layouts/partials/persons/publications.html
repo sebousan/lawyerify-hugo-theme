@@ -5,7 +5,7 @@
 {{ $pages = first 3 $pages }}
 
 {{ if $pages }}
-  <section class="person-publications">
+  <section class="person-publications latest">
     <header class="heading">
       {{ $heading := i18n "publications.latest_author" (dict "Author" $title) }}
       <h2>{{ $heading }}</h2>
