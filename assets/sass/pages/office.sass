@@ -1,0 +1,16 @@
+.term-offices
+
+    .office-persons
+        @include rfs($global-spacing, margin-top)
+
+    @include media-breakpoint-up(md)
+        .grid
+            >
+                .office-persons
+                    grid-column: 1/13
+                    
+    @include media-breakpoint-down(md)
+        .grid
+            >
+                .office-persons
+                    order: 5

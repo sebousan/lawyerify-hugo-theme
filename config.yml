@@ -10,6 +10,13 @@ params:
     xlarge: "1600x"
     desktop: "856x"
     mobile: "330x"
+  offices:
+    thumbnail:
+      desktop: "414x177"
+      mobile: "330x330"
+    image:
+      desktop: "856x"
+      mobile: "330x"
   persons:
     thumbnail:
       desktop: "100x100"

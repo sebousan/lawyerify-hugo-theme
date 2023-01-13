@@ -1,5 +1,5 @@
 {{ define "hero"}}
-  {{- partial "expertises/hero.html" . -}}
+  {{- partial "offices/hero.html" . -}}
 {{ end }}
 
 {{ define "main" }}
@@ -7,10 +7,10 @@
   {{ partial "blocks/list" . }}
   
   <div class="container">
-    {{ partial "expertises/heading" . }}
+    {{ partial "offices/heading" . }}
 
     {{ $paginator := .Paginator.Pages }}
-    {{ partial "pages/items" $paginator }}
+    {{ partial "offices/items" $paginator }}
     {{ partial "nav/pagination.html" . }}
   </div>
 
