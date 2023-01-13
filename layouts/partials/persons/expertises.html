@@ -1,0 +1,25 @@
+{{ $expertises := .Params.expertises }}
+{{ $pages := where site.Pages "Section" "expertises" }}
+{{ $pages = $pages | intersect (where site.Pages "Title" "in" $expertises ) }}
+
+{{ with $pages }}
+  {{ $count := . | len }}
+  <aside class="person-expertises">
+    <h2>{{ i18n "expertises.title" }}</h2>
+    {{ if lt $count 2 }}
+      {{ range . }}
+        <h3>{{ .Title }}</h3>
+        {{ with .Description }}
+          <p>{{ . }}</p>
+        {{ end }}
+        <a href="{{ .Permalink }}">{{ i18n "more" }}</a>
+      {{end}}
+    {{ else }}
+      <ul>
+        {{ range . }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{end}}
+      </ul>
+    {{ end }}
+  </aside>
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "hero"}}
+  {{- partial "persons/hero.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+
+  {{ partial "blocks/list" . }}
+  
+  <div class="container">
+    {{ partial "expertises/heading" . }}
+
+    {{ $paginator := sort (.Paginator.Pages) "Params.statutes" }}
+    {{ partial "pages/items" $paginator }}
+    {{ partial "nav/pagination.html" . }}
+  </div>
+
+{{ end }}

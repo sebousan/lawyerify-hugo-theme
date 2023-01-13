@@ -1,13 +1,13 @@
 {{ $context := . }}
+
 {{ with .Title }}
-  {{ $page := index (where site.Pages "Section" "posts") 0 }}
-  <header class="heading heading-filter">
+  {{ $page := index (last 1 (where site.Pages "Section" "expertises")) 0 }}
+  <header class="heading">
     {{ with $page }}
       <p class="surtitle">
         <a href="{{ .Permalink }}" class="back">{{ .Title }}</a>
       </p>
     {{ end }}
     <h1>{{ . }}</h1>
-    {{ partial "posts/filters/button" $context }}
   </header>
 {{ end }}

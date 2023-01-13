@@ -1,0 +1,9 @@
+{{ define "hero"}}
+  {{- partial "persons/hero.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+  <div class="container">
+    {{ partial "expertises/grid" . }}
+  </div>
+{{ end }}

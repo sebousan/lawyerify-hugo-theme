@@ -1,1 +1,12 @@
-{{ partial "commons/heading" . }}
+{{ $status := .Params.statutes }}
+{{ with index site.Data.statutes $status }}
+  {{ $status = .title }}
+{{ end }}
+{{ with .Title }}
+  <header class="heading">
+    {{ with $status }}
+      <p class="surtitle">{{ . }}</p>
+    {{ end }}
+    <h1>{{ partial "PrepareHTML" . }}</h1>
+  </header>
+{{ end }}

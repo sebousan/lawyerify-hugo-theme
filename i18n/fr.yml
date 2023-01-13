@@ -22,6 +22,12 @@ contact:
   whatsapp: WhatsApp
 credit:
   hugolify: un site éco-conçu produit avec <a href="https://www.lawyerify.fr" target="_blank" rel="noopener noreferrer" title="« Lawyerify » - lien externe">Lawyerify</a>
+expertises:
+  discover: Découvrez l’expertises
+  discover_persons: Découvrez nos experts en {{ .Title }}
+  title:
+    one: Expertise
+    other: Expertises
 filter: Filtrer
 header:
   accessibility:
