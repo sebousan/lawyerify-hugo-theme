@@ -1,4 +1,39 @@
-.term-persons
-    .heading
-        picture
-            margin-right: 1rem
+.page-persons
+    
+    .person-posts,
+    .person-publications
+        @include rfs($global-spacing, margin-top)
+
+    .person-posts
+        .posts
+            margin-bottom: 0
+    
+    .person-publications
+        .publications
+            margin-bottom: 0
+
+    @include media-breakpoint-up(md)
+        .grid
+            >
+                .featured-image
+                    grid-column: 1/4
+                .content
+                    grid-column: 4/9
+                .sidebar
+                    grid-column: 10/13
+                .person-posts,
+                .person-publications
+                    grid-column: 1/13
+                    
+    @include media-breakpoint-down(md)
+        .grid
+            >
+                .featured-image
+                    @include avatar
+                    order: 1
+                    width: 50%
+                .heading
+                    order: 2
+                .person-posts,
+                .person-publications
+                    order: 5

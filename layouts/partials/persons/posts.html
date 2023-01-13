@@ -2,9 +2,10 @@
 {{ $pages := where site.RegularPages "Section" "posts" }}
 {{ $pages = $pages | intersect (where site.RegularPages "Params.authors" "intersect" (slice $title) ) }}
 {{ $count := $pages | len }}
+{{ $pages = first 3 $pages }}
 
 {{ if $pages }}
-  <section>
+  <section class="person-posts">
     <header class="heading">
       {{ $heading := i18n "posts.latest_author" (dict "Author" $title) }}
       <h2>{{ $heading }}</h2>

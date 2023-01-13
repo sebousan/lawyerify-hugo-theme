@@ -6,16 +6,7 @@
   {{ partial "persons/schema" . }}
 
   <div class="container">
-    <div class="grid">
-      {{ partial "persons/heading-single" . }}
-      {{ partial "persons/content" . }}
-      {{ partial "persons/sidebar" . }}
-    </div>
-
-    {{ partial "persons/posts" . }}
-    {{ partial "persons/publications" . }}
-
+    {{ partial "persons/grid" . }}
   </div>
-
 {{ end }}
 

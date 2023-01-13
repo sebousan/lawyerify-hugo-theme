@@ -9,12 +9,13 @@ categories:
     one: Categorie
     other: Categories
 contact: 
-  email: E-mail
-  fax: Fax
+  email: "E-mail :"
+  fax: "Fax :"
   facebook: Facebook
   instagram: Instagram
   linkedin: Linkedin
   pinterest: Pinterest
+  tel: "Tel :"
   title: Contact
   twitter: Twitter
   website: Site web

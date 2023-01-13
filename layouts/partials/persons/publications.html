@@ -1,16 +1,16 @@
 {{ $title := .Title }}
 {{ $pages := where site.RegularPages "Section" "publications" }}
-{{ $pages = $pages | intersect (where site.RegularPages "Params.quoters" "intersect" (slice $title) ) }}
+{{ $pages = $pages | intersect (where site.RegularPages "Params.concerned" "intersect" (slice $title) ) }}
 {{ $count := $pages | len }}
 {{ $pages = first 3 $pages }}
 
 {{ if $pages }}
-  <section>
+  <section class="person-publications">
     <header class="heading">
       {{ $heading := i18n "publications.latest_author" (dict "Author" $title) }}
       <h2>{{ $heading }}</h2>
       {{ if gt $count 0 }}
-      {{ $item := partial "GetTaxonomy" (dict "slug" $title "taxonomy" "quoters") }}
+      {{ $item := partial "GetTaxonomy" (dict "slug" $title "taxonomy" "concerned") }}
         {{ with $item }}
           <a href="{{ .Permalink }}" class="more">{{ i18n "publications.more" }}</a>
         {{ end }}

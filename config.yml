@@ -14,7 +14,8 @@ params:
     thumbnail:
       desktop: "100x100"
     image:
-      desktop: "100x100"
+      mobile: "165x165"
+      desktop: "306x"
     post:
       desktop: "50x50"
     publication:
