@@ -10,11 +10,20 @@
             text-underline-offset: 3px
 
     &-social
-        .linkedin
+        --bs-nav-link-padding-x: .75rem
+        .linkedin,
+        .twitter
             a
                 &::after
                     content: none
-                &::before
-                    @include icon("linkedin")
                 span
                     display: none
+        .linkedin
+            a::before
+                @include icon("linkedin")
+        .twitter
+            a::before
+                @include icon("twitter")
+        .instagram
+            a::before
+                @include icon("instagram")
