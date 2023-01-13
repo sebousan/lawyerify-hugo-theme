@@ -12,7 +12,7 @@ params:
     mobile: "330x"
   offices:
     thumbnail:
-      desktop: "414x177"
+      desktop: "414x414"
       mobile: "330x330"
     image:
       desktop: "856x"
