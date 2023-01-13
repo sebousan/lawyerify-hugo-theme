@@ -1,11 +1,11 @@
 {{ with .Params.image}}
   {{ $desktop := site.Params.posts.image.desktop | default false }}
   {{ $mobile := site.Params.posts.image.mobile | default false }}
-  {{ partial "commons/image.html" (dict
+  {{ partial "commons/figure.html" (dict
     "src" .src
     "alt" .alt
     "credit" .credit
-    "picture_class" "featured-image"
+    "figure_class" "featured-image"
     "desktop" $desktop
     "mobile" $mobile
   ) }}
