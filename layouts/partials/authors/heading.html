@@ -1,0 +1,15 @@
+{{ $context := . }}
+{{ $title := .Title }}
+
+{{ with $title }}
+  {{ $pages := where site.RegularPages "Section" "persons" }}
+  {{ $page := index ($pages | intersect (where site.RegularPages "Title" "eq" $title)) 0 }}
+  <header class="heading heading-filter">
+    {{ with $page }}
+      <p class="back">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </p>
+    {{ end }}
+    <h1>{{ i18n "posts.list_author" }}</h1>
+  </header>
+{{ end }}
