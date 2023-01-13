@@ -1,16 +1,11 @@
 {{ define "hero"}}
-  {{- partial "commons/hero.html" . -}}
+  {{- partial "pages/hero.html" . -}}
 {{ end }}
 
 {{ define "main" }}
   {{ partial "pages/schema" . }}
 
-  <div class="container">
-    {{ partial "commons/heading" . }}
-
-    {{ $paginator := .Paginator.Pages }}
-    {{ partial "pages/items" $paginator }}
-    {{ partial "nav/pagination.html" . }}
-  </div>
-
+  {{ partial "pages/heading" . }}
+  {{ partial "blocks/list" . }}
+  {{ partial "pages/main" . }}
 {{ end }}
