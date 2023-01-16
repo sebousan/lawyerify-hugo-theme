@@ -12,7 +12,7 @@
       "description": {{ partial "TruncateContent" (partial "PrepareHTML" .) }},
     {{ end }}
 
-    "url": {{ .Permalink }}
+    "url": {{ .Permalink }},
 
     {{ with .Params.contact }}
       {{ with .email }}
