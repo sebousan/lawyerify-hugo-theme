@@ -1,7 +1,14 @@
-<div class="grid">
-  {{ partial "offices/heading-single" . }}
-  {{ partial "persons/featured-image" . }}
-  {{ partial "offices/content" . }}
-  {{ partial "offices/sidebar" . }}
+<div class="container">
+  <div class="grid">
+    {{ partial "offices/heading-single" . }}
+    {{ partial "persons/featured-image" . }}
+    {{ partial "offices/content" . }}
+    {{ partial "offices/sidebar" . }}
+  </div>
+</div>
+  
+{{ partial "blocks/list" . }}
+
+<div class="container">
   {{ partial "offices/persons" . }}
 </div>

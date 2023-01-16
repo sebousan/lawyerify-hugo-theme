@@ -1,7 +1,7 @@
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
+    "@type": "Organization",
     "name": {{ .Title | plainify | safeHTML }},
 
     {{ with .Params.image }}
@@ -14,12 +14,6 @@
 
     "url": {{ .Permalink }}
 
-    {{ with .Params.statutes }}
-      {{ with index site.Data.statutes . }}
-        "jobTitle": {{ .title | plainify | safeHTML }},
-      {{ end }}
-    {{ end }}
-
     {{ with .Params.contact }}
       {{ with .email }}
         "email": {{ . | plainify | safeHTML }},
@@ -30,6 +24,16 @@
       {{ with .fax }}
         "faxNumber": {{ . | plainify | safeHTML }},
       {{ end }}
+    {{ end }}
+
+    {{ with .Params.address }}
+      "address":{
+        "@type": "PostalAddress",
+        "addressCountry": {{ .country | plainify | safeHTML }},
+        "addressLocality": {{ .city | plainify | safeHTML }},
+        "postalCode": {{ .zipcode | plainify | safeHTML }},
+        "streetAddress": {{ .street | plainify | safeHTML }}
+      },
     {{ end }}
   }
 </script>
