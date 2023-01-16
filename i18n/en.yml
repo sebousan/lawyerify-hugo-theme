@@ -21,6 +21,12 @@ contact:
   whatsapp: WhatsApp
 credit:
   hugolify: a low impact website crafted with <a href="https://www.lawyerify.io" target="_blank">Lawyerify</a>
+expertises:
+  discover: Discover the expertise
+  discover_persons: Our {{ .Title }} experts
+  title:
+    one: Expertise
+    other: Expertises
 filter: Filter
 header:
   accessibility:
