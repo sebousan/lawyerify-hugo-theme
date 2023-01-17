@@ -23,7 +23,7 @@ contact:
 credit:
   hugolify: un site éco-conçu produit avec <a href="https://www.lawyerify.fr" target="_blank" rel="noopener noreferrer" title="« Lawyerify » - lien externe">Lawyerify</a>
 expertises:
-  discover: Découvrez l’expertises
+  discover: Découvrez l’expertise
   discover_persons: Nos experts en {{ .Title }}
   title:
     one: Expertise
@@ -43,6 +43,12 @@ navigation:
   close: Fermer
   main: Navigation principale
   menu: Menu
+offices:
+  discover: Découvrez le cabinet
+  discover_persons: L’équipe du cabinet
+  title:
+    one: Cabinet
+    other: Cabinets
 page404:
   title: Page introuvable
   text: La page que vous recherchez n'existe pas ou a été déplacée.
@@ -59,24 +65,24 @@ pagination:
   previous_section: "<span>{{ .Section }}</span> précédent"
 posts:
   latest: Dernières actualités
-  latest_author: Dernières actualités de {{ .Author }}
-  list_author: Liste des actualités de l’auteur
+  latest_person: Dernières actualités de {{ .Person }}
+  list_person: Liste des actualités de l’auteur
   more: Découvrir plus d’actualités
   title:
     one: Actualité
     other: Actualités
-  title_author: Actualités de {{ .Author }}
+  title_person: Actualités de {{ .Person }}
 publications:
   latest: Dernières parutions
-  latest_author: Dernières parutions de {{ .Author }}
-  list_author: Liste des parutions de la personne concernée
+  latest_person: Dernières parutions de {{ .Person }}
+  list_person: Liste des parutions de la personne concernée
   more: Découvrir plus de parutions
   press: 
     more: Découvrir l’article complet
   title:
     one: Parution
     other: Parutions
-  title_author: Parutions de {{ .Author }}
+  title_person: Parutions de {{ .Person }}
 concerned:
   discover: Découvrir la personne concernée
   title:

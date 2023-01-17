@@ -1,0 +1,26 @@
+{{ $filename := .filename }}
+{{ $section := .section }}
+{{ $taxonomy := .taxonomy }}
+
+{{ $pages := partial "GetTaxonomyPageBySlug" (dict 
+  "section" $section
+  "taxonomy" $taxonomy
+  "slug" $filename) }}
+{{ $count := $pages | len }}
+{{ $pages = first 3 $pages }}
+
+{{ if $pages }}
+  {{ $title := .Title }}
+  <section class="latest latest-{{ $section }}">
+    <header class="heading">
+      <h2>{{ i18n (printf "%s.latest" $section) }}</h2>
+      {{ if gt $count 2 }}
+        {{ $item := partial "GetTaxonomy" (dict "slug" $title "taxonomy" "concerned") }}
+        {{ with $item }}
+          <a href="{{ .Permalink }}" class="more">{{ i18n (printf "%s.more" $section) }}</a>
+        {{ end }}
+      {{ end }}
+    </header>
+    {{ partial (printf "%s/items" $section) $pages }}
+  </section>
+{{ end }}
