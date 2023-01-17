@@ -1,17 +1,10 @@
 .page-persons
     
-    .person-posts,
-    .person-publications
+    .latest
         @include rfs($global-spacing, margin-top)
-
-    .person-posts
-        .posts
+        > div
             margin-bottom: 0
     
-    .person-publications
-        .publications
-            margin-bottom: 0
-
     @include media-breakpoint-up(md)
         .grid
             >
@@ -21,8 +14,7 @@
                     grid-column: 4/9
                 .sidebar
                     grid-column: 10/13
-                .person-posts,
-                .person-publications
+                .latest
                     grid-column: 1/13
                     
     @include media-breakpoint-down(md)
@@ -34,6 +26,5 @@
                     width: 50%
                 .heading
                     order: 2
-                .person-posts,
-                .person-publications
+                .latest
                     order: 5

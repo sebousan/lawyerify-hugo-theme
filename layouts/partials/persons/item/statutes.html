@@ -1,5 +1,5 @@
 {{ with .Params.statutes }}
-  {{ with index site.Data.statutes . }}
-    <p class="status" itemprop="jobTitle">{{ partial "PrepareHTML" .title }} </p>
+  {{ with site.GetPage (printf "statutes/%s" .) }}
+    <p class="status" itemprop="jobTitle">{{ partial "PrepareHTML" .Params.title_singular }} </p>
   {{ end }}
 {{ end }}

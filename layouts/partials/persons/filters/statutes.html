@@ -1,16 +1,1 @@
-{{/*  {{ if .Site.Data.statutes }}
-  {{ $nStatutes := .Site.Data.statutes | len }}
-  {{ if gt $nStatutes 1 }}
-    <p>{{ i18n "statutes.title" $nStatutes }}</p>
-    <ul>
-      {{ range $taxonomy_term, $status := .Site.Data.statutes }}
-        <li>
-          {{ $category := partial "GetTaxonomy" (dict "slug" $taxonomy_term "taxonomy" "categories")  }}
-          {{ with $category }}
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          {{ end }}
-        </li>
-      {{ end }}
-    </ul>
-  {{ end }}
-{{ end }}  */}}
+{{ partial "commons/filters/taxonomy.html" (dict "tax" "statutes") }}

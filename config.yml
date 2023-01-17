@@ -10,12 +10,13 @@ params:
     xlarge: "1600x"
     desktop: "856x"
     mobile: "330x"
+    avatar: "50x50"
   offices:
     thumbnail:
       desktop: "414x414"
       mobile: "330x330"
     image:
-      desktop: "856x"
+      desktop: "306x"
       mobile: "330x"
   persons:
     thumbnail:

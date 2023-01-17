@@ -1,12 +1,11 @@
-{{ $expertises := .Params.expertises }}
-{{ $pages := where site.Pages "Section" "expertises" }}
-{{ $pages = $pages | intersect (where site.Pages "Title" "in" $expertises ) }}
+{{ $pages := where site.Pages "Section" "offices" }}
+{{ $pages = $pages | intersect (where site.Pages "Title" "in" .Params.offices ) }}
 
 {{ with $pages }}
   {{ $count := . | len }}
   {{ $desktop := site.Params.image.avatar | default false }}
-  <aside class="list list-expertises">
-    <h2>{{ i18n "expertises.title" $count }}</h2>
+  <aside class="list list-offices">
+    <p>{{ i18n "offices.title" $count }}</p>
     <ul>
       {{ range . }}
         <li>
@@ -20,9 +19,9 @@
             ) }}
           {{ end -}}
           <div>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-            {{ with .Description }}
-              <br><span>{{ partial "TruncateContent" . }}</span>
+            <a href="{{ .Permalink }}">{{ partial "PrepareHTML" .Title }}</a>
+            {{ with .Params.address }}
+              <br><span>{{ partial "PrepareHTML" .city }}, {{ partial "PrepareHTML" .country }}</span>
             {{ end }}
           </div>
         </li>

@@ -20,6 +20,11 @@ contact:
   twitter: Twitter
   website: Site web
   whatsapp: WhatsApp
+concerned:
+  discover: Découvrir la personne concernée
+  title:
+    one: Personnes concernée
+    other: Personnes concernées
 credit:
   hugolify: un site éco-conçu produit avec <a href="https://www.lawyerify.fr" target="_blank" rel="noopener noreferrer" title="« Lawyerify » - lien externe">Lawyerify</a>
 expertises:
@@ -83,17 +88,16 @@ publications:
     one: Parution
     other: Parutions
   title_person: Parutions de {{ .Person }}
-concerned:
-  discover: Découvrir la personne concernée
-  title:
-    one: Personnes concernée
-    other: Personnes concernées
 reading_time:
   one: Une minute de lecture
   other: '{{.Time}} minutes de lecture'
 share:
   share_on: Partager sur {{ .Website }}
   title: Partager
+statutes:
+  title:
+    one: Statuts
+    other: Statuts
 tags:
   title:
     one: Tag

@@ -1,6 +1,6 @@
 {{ $status := .Params.statutes }}
-{{ with index site.Data.statutes $status }}
-  {{ $status = .title }}
+{{ with site.GetPage (printf "statutes/%s" $status) }}
+  {{ $status = .Params.title_singular }}
 {{ end }}
 {{ with .Title }}
   <header class="heading">

@@ -6,16 +6,16 @@
     {{ $i18n := printf "%s.title" $tax }}
     <div class="list list-{{ $tax }}">
       <p>{{ i18n $i18n $nTaxs }}</p>
-      <ul>
+      <ol>
         {{ range $taxonomy_term, $taxonomy := . }}
           <li>
             {{ $item := partial "GetTaxonomy" (dict "slug" $taxonomy_term "taxonomy" $tax)  }}
             {{ with $item }}
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              <a href="{{ .Permalink }}">{{ partial "PrepareHTML" .Title }}</a>
             {{ end }}
           </li>
         {{ end }}
-      </ul>
+      </ol>
     </div>
   {{ end }}
 {{ end }}

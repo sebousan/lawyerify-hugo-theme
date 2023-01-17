@@ -8,6 +8,11 @@ categories:
   title:
     one: Category
     other: Categories
+concerned:
+  discover: Découvrir la personne concernée
+  title:
+    one: Personnes concernée
+    other: Personnes concernées
 contact: 
   email: Email
   fax: Fax
@@ -58,19 +63,34 @@ pagination:
   previous_section: Previous <span>{{ .Section }}</span>
 posts:
   latest: Latest news
-  latest_author: Latest news of {{ .Author }}
-  list_author: News list of this author
+  latest_person: Latest news of {{ .Person }}
+  list_person: News list of this author
   more: Discover more news
   title:
     one: New
     other: News
-  title_author: News of {{ .Author }}
+  title_person: News of {{ .Person }}
+publications:
+  latest: Latest publications
+  latest_person: Latest publications of {{ .Person }}
+  list_person: Liste des parutions de la personne concernée
+  more: More publications
+  press: 
+    more: Découvrir l’article complet
+  title:
+    one: Publication
+    other: Publications
+  title_person: Publications of {{ .Person }}
 reading_time:
   one: One minute to read
   other: '{{.Time}} minutes to read'
 share:
   share_on: Share on {{ .Website }}
   title: Share
+statutes:
+  title:
+    one: Status
+    other: Statutes
 tags:
   title:
     one: Tag

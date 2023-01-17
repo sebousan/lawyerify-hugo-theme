@@ -2,7 +2,7 @@
 	safeHTML (
 		plainify (
 			chomp (
-				truncate 120 "…" (
+				truncate 100 "…" (
 					partial "CorrectPunctuation" .
 				)
 			)

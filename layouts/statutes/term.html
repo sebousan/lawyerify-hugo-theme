@@ -3,9 +3,6 @@
 {{ end }}
 
 {{ define "main" }}
-
-  {{ partial "blocks/list" . }}
-  
   <div class="container">
     {{ partial "persons/heading" . }}
     {{ partial "persons/filters" . }}
@@ -14,5 +11,4 @@
     {{ partial "persons/items" $paginator }}
     {{ partial "nav/pagination.html" . }}
   </div>
-
 {{ end }}

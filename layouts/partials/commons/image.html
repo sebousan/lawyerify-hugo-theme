@@ -115,7 +115,7 @@
 
           {{ if $mobile_size }}
 
-            {{ if partial "isCrop" $mobile_size }}
+          {{ if partial "isCrop" $mobile_size }}
               {{ $image_mobile = $image.Fill $mobile_size }}
             {{ else }}
               {{ $image_mobile = $image.Resize $mobile_size }}
