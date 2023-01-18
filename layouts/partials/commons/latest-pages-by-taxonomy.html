@@ -1,13 +1,14 @@
 {{ $filename := .filename }}
 {{ $section := .section }}
 {{ $taxonomy := .taxonomy }}
+{{ $limit := .limit | default 3 }}
 
 {{ $pages := partial "GetTaxonomyPageBySlug" (dict 
   "section" $section
   "taxonomy" $taxonomy
   "slug" $filename) }}
 {{ $count := $pages | len }}
-{{ $pages = first 3 $pages }}
+{{ $pages = first $limit $pages }}
 
 {{ if $pages }}
   {{ $title := .Title }}
