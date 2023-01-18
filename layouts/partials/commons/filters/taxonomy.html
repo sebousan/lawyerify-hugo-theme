@@ -1,4 +1,5 @@
 {{ $tax := .tax | default false }}
+{{ $withImage := .image | default false }}
 {{ if $tax }}
   {{ $the_tax := index site.Taxonomies $tax }}
   {{ with $the_tax }}
@@ -8,10 +9,35 @@
       <p>{{ i18n $i18n $nTaxs }}</p>
       <ol>
         {{ range $taxonomy_term, $taxonomy := . }}
+          {{ $item := partial "GetTaxonomy" (dict "slug" $taxonomy_term "taxonomy" $tax)  }}
+          {{ with $item }}
+            {{ $exists := os.FileExists (printf "content/%s/%s" $tax $taxonomy_term) }}
+            {{ $title := .Title }}
+            {{ $image := .Params.image }}
+            {{ if not $exists }}
+              {{ with site.GetPage (printf "/persons/%s" $taxonomy_term) }}
+                {{ $title = .Title }}
+                {{ $image = .Params.image }}
+              {{ end }}
+            {{ end }}
           <li>
-            {{ $item := partial "GetTaxonomy" (dict "slug" $taxonomy_term "taxonomy" $tax)  }}
-            {{ with $item }}
-              <a href="{{ .Permalink }}">{{ partial "PrepareHTML" .Title }}</a>
+              {{ if $withImage }}
+                {{- with $image}}
+                  {{ $desktop := site.Params.image.avatar | default false }}
+                  {{ partial "commons/image.html" (dict
+                    "src" .src
+                    "alt" .alt
+                    "desktop" $desktop
+                    "picture_class" "avatar"
+                    "crop" "top"
+                  ) }}
+                {{ end -}}
+                <div>
+              {{ end }}
+              <a href="{{ .Permalink }}">{{ partial "PrepareHTML" $title }}</a>
+              {{ if $withImage }}
+                </div>
+              {{ end }}
             {{ end }}
           </li>
         {{ end }}
