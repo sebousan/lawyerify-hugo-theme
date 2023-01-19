@@ -1,6 +1,7 @@
 {{ $filename := .filename }}
 {{ $section := .section }}
 {{ $taxonomy := .taxonomy }}
+{{ $name := .name }}
 {{ $limit := .limit | default 3 }}
 
 {{ $pages := partial "GetTaxonomyPageBySlug" (dict 
@@ -17,7 +18,7 @@
       {{ if gt $count $limit }}
         {{ $item := partial "GetTaxonomy" (dict "slug" $filename "taxonomy" $taxonomy) }}
         {{ with $item }}
-          <a href="{{ .Permalink }}" class="more">{{ i18n (printf "%s.more" $section) }}</a>
+          <a href="{{ .Permalink }}" class="more">{{ i18n (printf "%s.more_person" $section) (dict "Person" $name) }}</a>
         {{ end }}
       {{ end }}
     </header>

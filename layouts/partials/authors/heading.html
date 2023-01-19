@@ -1,13 +1,11 @@
 {{ $slug := .Title }}
 
 {{ with $slug }}
-  {{ $page := site.GetPage (printf "persons/%s" $slug) }}
+  {{ $person := site.GetPage (printf "persons/%s" $slug) }}
   <header class="heading heading-filter">
-    {{ with $page }}
-      <p class="surtitle">
-        <a href="{{ .Permalink }}" class="back">{{ .Title }}</a>
-      </p>
-    {{ end }}
-    <h1>{{ i18n "posts.list_person" }}</h1>
+    <p class="surtitle">
+      <a href="../" class="back">{{ i18n "posts.all" }}</a>
+    </p>
+    <h1>{{ i18n "posts.list_person" (dict "Person" $person.Title) }}</h1>
   </header>
 {{ end }}

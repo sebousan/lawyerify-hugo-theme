@@ -69,19 +69,25 @@ pagination:
   previous: Précédent
   previous_section: "<span>{{ .Section }}</span> précédent"
 posts:
+  all: Toutes l’actualités du cabinet
   latest: Dernières actualités
   latest_person: Dernières actualités de {{ .Person }}
-  list_person: Liste des actualités de l’auteur
+  list: Liste des actualités de l’auteur
+  list_person: Liste des actualités de {{ .Person }}
   more: Découvrir plus d’actualités
+  more_person: Découvrir plus d’actualités de {{ .Person }}
   title:
     one: Actualité
     other: Actualités
   title_person: Actualités de {{ .Person }}
 publications:
+  all: Toutes les parutions du cabinet
   latest: Dernières parutions
   latest_person: Dernières parutions de {{ .Person }}
-  list_person: Liste des parutions de la personne concernée
+  list: Liste des parutions de la personne concernée
+  list_person: Liste des parutions de {{ .Person }}
   more: Découvrir plus de parutions
+  more_person: Découvrir plus de parutions de {{ .Person }}
   press: 
     more: Découvrir l’article complet
   title:
