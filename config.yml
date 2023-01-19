@@ -11,6 +11,13 @@ params:
     desktop: "856x"
     mobile: "330x"
     avatar: "50x50"
+  expertises:
+    thumbnail:
+      desktop: "414x177"
+      mobile: "330x142"
+    image:
+      desktop: "306x"
+      mobile: "330x"
   offices:
     thumbnail:
       desktop: "414x414"

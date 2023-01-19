@@ -9,10 +9,7 @@
   <div class="container">
     {{ partial "persons/heading" . }}
     {{ partial "persons/filters" . }}
-
-    {{ $paginator := sort (.Paginator.Pages) "Params.statutes" }}
-    {{ partial "persons/items" $paginator }}
-    {{ partial "nav/pagination.html" . }}
+    {{ partial "persons/paginator" . }}
   </div>
 
 {{ end }}

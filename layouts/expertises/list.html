@@ -8,10 +8,7 @@
   
   <div class="container">
     {{ partial "expertises/heading" . }}
-
-    {{ $paginator := .Paginator.Pages }}
-    {{ partial "pages/items" $paginator }}
-    {{ partial "nav/pagination.html" . }}
+    {{ partial "expertises/paginator" . }}
   </div>
 
 {{ end }}
