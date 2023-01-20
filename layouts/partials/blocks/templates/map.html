@@ -1,11 +1,34 @@
+{{ $class := "full" }}
+{{ $divider := 1 }}
+{{ if eq .grid "small" }}
+  {{ $class = "col-md-6 offset-md-3" }}
+  {{ $divider = 1.8 }}
+{{ else if eq .grid "medium" }}
+  {{ $class = "col-md-8 offset-md-2" }}
+  {{ $divider = 1.5 }}
+{{ else if eq .grid "large" }}
+  {{ $class = "col-md-10 offset-md-1" }}
+  {{ $divider = 1.2 }}
+{{ end }}
+
 <section class="block-map{{ with .background }} block-bg{{ end }}">
   <div class="container">
 
-    {{ partial "blocks/heading.html" . }}
+    {{ if ne .grid "full" }}
+    <div class="row">
+      <div class="{{ $class }}">
+    {{ end }}
 
-    {{ $zoom := .zoom }}
-    {{ with .location }}
-    <div class="map js-map" data-location="{{ . }}" data-zoom="{{ $zoom }}"></div>
+        {{ partial "blocks/heading.html" . }}
+
+        {{ $zoom := .zoom }}
+        {{ with .location }}
+        <div class="map js-map" data-location="{{ . }}" data-zoom="{{ $zoom }}"></div>
+        {{ end }}
+    
+    {{ if ne .grid "full" }}
+      </div>
+    </div>
     {{ end }}
     
   </div>
