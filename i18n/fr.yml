@@ -28,6 +28,7 @@ concerned:
 credit:
   hugolify: un site éco-conçu produit avec <a href="https://www.lawyerify.fr" target="_blank" rel="noopener noreferrer" title="« Lawyerify » - lien externe">Lawyerify</a>
 expertises:
+  all: Toutes les expertises du cabinet
   discover: Découvrez l’expertise
   discover_persons: Nos experts en {{ .Title }}
   title:
@@ -49,6 +50,7 @@ navigation:
   main: Navigation principale
   menu: Menu
 offices:
+  all: Tous les cabinets
   discover: Découvrez le cabinet
   discover_persons: L’équipe du cabinet
   title:
@@ -68,6 +70,11 @@ pagination:
   page: Page {{ .Number }}
   previous: Précédent
   previous_section: "<span>{{ .Section }}</span> précédent"
+persons:
+  all: Toutes les personnes du cabinet
+  title:
+    one: Personne
+    other: Personnes
 posts:
   all: Toutes l’actualités du cabinet
   latest: Dernières actualités
