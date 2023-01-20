@@ -1,8 +1,9 @@
 {{ define "hero"}}
-  {{- partial "offices/hero.html" . -}}
+  {{- partial "offices/hero" . -}}
 {{ end }}
 
 {{ define "main" }}
+  {{ partial "offices/schema" . }}
 
   {{ partial "blocks/list" . }}
   

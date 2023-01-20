@@ -1,14 +1,14 @@
 {{ define "hero"}}
-  {{- partial "commons/hero.html" . -}}
+  {{- partial "authors/hero" . -}}
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "pages/schema" . }}
+  {{ partial "authors/schema" . }}
 
   <div class="container">
     {{ partial "authors/heading" . }}
-    {{ partial "posts/filters" . }}
-    {{ partial "posts/paginator" . }}
+    {{ partial "authors/filters" . }}
+    {{ partial "authors/paginator" . }}
   </div>
 
 {{ end }}

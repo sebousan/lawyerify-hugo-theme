@@ -1,11 +1,13 @@
 {{ define "hero"}}
-  {{- partial "publications/hero.html" . -}}
+  {{- partial "concerned/hero" . -}}
 {{ end }}
 
 {{ define "main" }}
+  {{ partial "concerned/schema" . }}
+
   <div class="container">
     {{ partial "concerned/heading" . }}
-    {{ partial "publications/filters" . }}
-    {{ partial "publications/paginator" . }}
+    {{ partial "concerned/filters" . }}
+    {{ partial "concerned/paginator" . }}
   </div>
 {{ end }}

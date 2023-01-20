@@ -1,11 +1,13 @@
 {{ define "hero"}}
-  {{- partial "persons/hero.html" . -}}
+  {{- partial "statutes/hero" . -}}
 {{ end }}
 
 {{ define "main" }}
+  {{ partial "statutes/schema" . }}
+
   <div class="container">
-    {{ partial "persons/heading" . }}
-    {{ partial "persons/filters" . }}
-    {{ partial "persons/paginator" . }}
+    {{ partial "statutes/heading" . }}
+    {{ partial "statutes/filters" . }}
+    {{ partial "statutes/paginator" . }}
   </div>
 {{ end }}

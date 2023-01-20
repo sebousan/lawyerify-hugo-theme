@@ -1,8 +1,10 @@
 {{ define "hero"}}
-  {{- partial "expertises/hero.html" . -}}
+  {{- partial "expertises/hero" . -}}
 {{ end }}
 
 {{ define "main" }}
+  {{ partial "expertises/schema-single" . }}
+
   <div class="container">
     {{ partial "expertises/grid" . }}
   </div>

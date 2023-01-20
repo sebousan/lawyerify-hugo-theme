@@ -1,8 +1,9 @@
 {{ define "hero"}}
-  {{- partial "expertises/hero.html" . -}}
+  {{- partial "expertises/hero" . -}}
 {{ end }}
 
 {{ define "main" }}
+  {{ partial "expertises/schema" . }}
 
   {{ partial "blocks/list" . }}
   

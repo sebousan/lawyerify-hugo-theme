@@ -1,0 +1,22 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": {{ .Title }},
+
+    {{ with .Date }}
+      "datePublished": {{ . }},
+    {{ end }}
+
+    {{ with .Params.description }}
+      "abstract": {{ . | plainify | safeHTML }},
+    {{ end }}
+
+    {{ with .Params.press }}
+      "publisher":{
+        "@type": "Organization",
+        "name": {{ .title | plainify | safeHTML }}
+      },
+    {{ end }}
+  }
+</script>

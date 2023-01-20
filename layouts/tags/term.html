@@ -1,15 +1,16 @@
 {{ define "hero"}}
-  {{- partial "tags/hero.html" . -}}
+  {{- partial "tags/hero" . -}}
 {{ end }}
 
 {{ define "main" }}
+  {{ partial "tags/schema" . }}
 
   {{ partial "blocks/list" . }}
 
   <div class="container">
     {{ partial "tags/heading" . }}
-    {{ partial "posts/filters" . }}
-    {{ partial "posts/paginator" . }}
+    {{ partial "tags/filters" . }}
+    {{ partial "tags/paginator" . }}
   </div>
 
 {{ end }}
