@@ -1,3 +1,5 @@
+import lazyInit from '../utils/lazyInit';
+
 const maps = document.querySelectorAll('.block-map');
 
 class BlockMap {
@@ -27,5 +29,7 @@ class BlockMap {
 }
 
 maps.forEach((map) => {
-    new BlockMap(map);
+    lazyInit(map, () => {
+        new BlockMap(map);
+    });
 });
