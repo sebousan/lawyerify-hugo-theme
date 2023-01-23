@@ -8,6 +8,11 @@ categories:
   title:
     one: Categorie
     other: Categories
+concerned:
+  discover: Découvrir la personne concernée
+  title:
+    one: Personnes concernée
+    other: Personnes concernées
 contact: 
   email: "E-mail :"
   fax: "Fax :"
@@ -20,13 +25,8 @@ contact:
   twitter: Twitter
   website: Site web
   whatsapp: WhatsApp
-concerned:
-  discover: Découvrir la personne concernée
-  title:
-    one: Personnes concernée
-    other: Personnes concernées
 credit:
-  hugolify: un site éco-conçu produit avec <a href="https://www.lawyerify.fr" target="_blank" rel="noopener noreferrer" title="« Lawyerify » - lien externe">Lawyerify</a>
+  lawyerify: un site éco-conçu produit avec <a href="https://www.lawyerify.fr" target="_blank" rel="noopener noreferrer" title="« Lawyerify » - lien externe">Lawyerify</a>
 expertises:
   all: Toutes les expertises du cabinet
   discover: Découvrez l’expertise
@@ -72,6 +72,7 @@ pagination:
   previous_section: "<span>{{ .Section }}</span> précédent"
 persons:
   all: Toutes les personnes du cabinet
+  more: Découvrir plus de personnes
   title:
     one: Personne
     other: Personnes

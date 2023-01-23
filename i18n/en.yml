@@ -25,7 +25,7 @@ contact:
   website: Website
   whatsapp: WhatsApp
 credit:
-  hugolify: a low impact website crafted with <a href="https://www.lawyerify.io" target="_blank">Lawyerify</a>
+  lawyerify: a low impact website crafted with <a href="https://www.lawyerify.io" target="_blank">Lawyerify</a>
 expertises:
   discover: Discover the expertise
   discover_persons: Our {{ .Title }} experts
@@ -61,6 +61,12 @@ pagination:
   page: Page {{ .Number }}
   previous: Previous
   previous_section: Previous <span>{{ .Section }}</span>
+persons:
+  all: All persons
+  more: Discover more persons
+  title:
+    one: Person
+    other: Persons
 posts:
   latest: Latest news
   latest_person: Latest news of {{ .Person }}
