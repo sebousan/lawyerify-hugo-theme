@@ -4,3 +4,9 @@
     @extend .bg-light
     filter: grayscale(.7)
     overflow: hidden
+
+    @include media-breakpoint-down(lg)
+        .container > &
+            margin-left: -$gutter-mobile
+            margin-right: -$gutter-mobile
+            width: auto

@@ -1,11 +1,11 @@
 .latest
     @include media-breakpoint-down(lg)
-        margin-left: calc(1.875rem / -2)
-        margin-right: calc(1.875rem / -2)
-        padding-left: calc(1.875rem / 2)
-        padding-right: calc(1.875rem / 2)
+        margin-left: calc(#{$gutter-mobile} / -2)
+        margin-right: calc(#{$gutter-mobile} / -2)
+        padding-left: calc(#{$gutter-mobile} / 2)
+        padding-right: calc(#{$gutter-mobile} / 2)
         overflow: hidden
     > div
         @include scroll-snap
         @include media-breakpoint-down(lg)
-            --bs-gutter-x: 1.875rem
+            --bs-gutter-x: $gutter-mobile

@@ -5,3 +5,11 @@
     .heading + div
         @include scroll-snap
         justify-content: center
+        @include media-breakpoint-down(lg)
+            margin-left: -$gutter-mobile
+            margin-right: -$gutter-mobile
+            > *
+                padding-left: $gutter-mobile
+                padding-right: 0
+                &:last-child
+                    margin-right: $gutter-mobile
