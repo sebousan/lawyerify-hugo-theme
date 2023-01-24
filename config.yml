@@ -5,56 +5,59 @@ params:
   gutter: 24
   container:
     desktop: 1292
-    mobile: 330
+    mobile: 300
   image:
     xlarge: "1600x"
     desktop: "856x"
-    mobile: "330x"
+    mobile: "300x"
     avatar: "50x50"
   expertises:
     thumbnail:
       desktop: "414x177"
-      mobile: "330x142"
+      mobile: "300x129"
     image:
-      desktop: "306x"
-      mobile: "330x"
+      desktop: "300x"
+      mobile: "300x"
   offices:
     thumbnail:
       desktop: "414x414"
-      mobile: "330x330"
+      mobile: "300x300"
     image:
-      desktop: "306x"
-      mobile: "330x"
+      desktop: "300x"
+      mobile: "300x"
   persons:
     thumbnail:
       desktop: "100x100"
+      mobile: "100x100"
     image:
-      mobile: "165x165"
-      desktop: "306x"
+      desktop: "300x"
+      mobile: "198x"
     post:
       desktop: "50x50"
+      mobile: "50x50"
     publication:
       desktop: "50x50"
+      mobile: "50x50"
   pages:
     thumbnail:
       desktop: "414x177"
-      mobile: "330x142"
+      mobile: "300x129"
     image:
       desktop: "856x"
-      mobile: "330x"
+      mobile: "300x"
   posts:
     thumbnail:
       desktop: "414x177"
-      mobile: "330x142"
+      mobile: "300x129"
     image:
       desktop: "856x"
-      mobile: "330x"
+      mobile: "300x"
   blocks:
     editorial:
       desktop: "624x"
-      mobile: "330x"
+      mobile: "300x"
     figure:
       desktop: "1292x"
-      mobile: "330x"
+      mobile: "300x"
     gallery:
-      mobile: "330x"
+      mobile: "300x"

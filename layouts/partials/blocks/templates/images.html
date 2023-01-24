@@ -6,9 +6,11 @@
     {{ with .images }}
       <div class="images">
         {{ $desktop := site.Params.blocks.figure.desktop | default false }}
+        {{ $mobile := site.Params.blocks.figure.mobile | default false }}
         {{ partial "commons/images" (dict
           "images" .
-          "desktop" $desktop ) }}
+          "desktop" $desktop
+          "mobile" $mobile ) }}
       </div>
     {{ end }}
 

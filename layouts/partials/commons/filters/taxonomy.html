@@ -24,10 +24,12 @@
               {{ if $withImage }}
                 {{- with $image}}
                   {{ $desktop := site.Params.image.avatar | default false }}
+                  {{ $mobile := site.Params.image.avatar | default false }}
                   {{ partial "commons/image.html" (dict
                     "src" .src
                     "alt" .alt
                     "desktop" $desktop
+                    "mobile" $mobile
                     "picture_class" "avatar"
                     "crop" "top"
                   ) }}

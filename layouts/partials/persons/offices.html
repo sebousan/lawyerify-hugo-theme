@@ -4,6 +4,7 @@
 {{ with $pages }}
   {{ $count := . | len }}
   {{ $desktop := site.Params.image.avatar | default false }}
+  {{ $mobile := site.Params.image.avatar | default false }}
   <aside class="list list-offices">
     <p>{{ i18n "offices.title" $count }}</p>
     <ul>
@@ -14,6 +15,7 @@
               "src" .src
               "alt" .alt
               "desktop" $desktop
+              "mobile" $mobile
               "picture_class" "avatar"
               "crop" "top"
             ) }}
