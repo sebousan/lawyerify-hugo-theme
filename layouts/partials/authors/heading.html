@@ -1,4 +1,5 @@
 {{ $slug := .Title }}
+{{ $context := . }}
 
 {{ with $slug }}
   {{ $person := site.GetPage (printf "persons/%s" $slug) }}
@@ -7,5 +8,6 @@
       <a href="../" class="back">{{ i18n "posts.all" }}</a>
     </p>
     <h1>{{ i18n "posts.list_person" (dict "Person" $person.Title) }}</h1>
+    {{ partial "posts/filters/button" $context }}
   </header>
 {{ end }}
