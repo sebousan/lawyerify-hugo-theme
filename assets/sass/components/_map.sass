@@ -5,6 +5,9 @@
     filter: grayscale(.7)
     overflow: hidden
 
+    @include media-breakpoint-down(md)
+        --bs-aspect-ratio: 75%
+
     @include media-breakpoint-down(lg)
         .container > &
             margin-left: -$gutter-mobile
