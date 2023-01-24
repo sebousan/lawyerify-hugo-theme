@@ -6,7 +6,7 @@
         <p class="name">{{ partial "PrepareHTML" . }}</p>
       {{ end }}
       {{ with .Params.description }}
-        <p class="description">{{ partial "TruncateContent" (partial "PrepareHTML" .) }}</p>
+        <p class="description">{{ partial "TruncateContent" (dict "content" .) }}</p>
       {{ end }}
       {{ $i18n := i18n "more" }}
       {{ with .Params.statutes }}

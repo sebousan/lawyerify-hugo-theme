@@ -9,7 +9,7 @@
     {{ end }}
 
     {{ with .Description }}
-      "description": {{ partial "TruncateContent" (partial "PrepareHTML" .) }},
+      "description": {{ partial "TruncateContent" (dict "content" .) }},
     {{ end }}
 
     "url": {{ .Permalink }},

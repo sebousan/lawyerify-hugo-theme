@@ -22,7 +22,7 @@
           <div>
             <a href="{{ .Permalink }}">{{ .Title }}</a>
             {{ with .Description }}
-              <br><span>{{ partial "TruncateContent" . }}</span>
+              <br><span>{{ partial "TruncateContent" (dict "content" .) }}</span>
             {{ end }}
           </div>
         </li>
