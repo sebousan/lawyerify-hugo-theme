@@ -2,10 +2,10 @@
 {{ $content := .content }}
 
 {{ return
-  safeHTML (
-    plainify (
+  truncate $limit "…" (
+    safeHTML (
       chomp (
-        truncate $limit "…" (
+        plainify (
           partial "CorrectPunctuation" $content
         )
       )
