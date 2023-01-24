@@ -73,6 +73,9 @@ pagination:
 persons:
   all: Toutes les personnes du cabinet
   more: Découvrir plus de personnes
+  discover_occupation: 
+    consonant: Découvir le {{ .Occupation }}
+    vowel: Découvir l’{{ .Occupation }}
   title:
     one: Personne
     other: Personnes

@@ -8,11 +8,22 @@
       {{ with .Params.description }}
         <p class="description">{{ partial "TruncateContent" (partial "PrepareHTML" .) }}</p>
       {{ end }}
-      <p><a href="{{ .Permalink }}">{{ i18n (printf "%s.discover" $type) }}</a></p>
+      {{ $i18n := i18n "more" }}
+      {{ with .Params.statutes }}
+        {{ with site.GetPage (printf "statutes/%s" .) }}
+          {{ $occupation := lower .Params.title_singular }}
+          {{ if partial "isVowel" $occupation }}
+            {{ $i18n = i18n "persons.discover_occupation.vowel" (dict "Occupation" $occupation) }}
+          {{ else }}
+            {{ $i18n = i18n "persons.discover_occupation.consonant" (dict "Occupation" $occupation) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      <p><a href="{{ .Permalink }}">{{ $i18n }}</a></p>
     </div>
     {{ with .Params.image}}
       {{ $desktop := false }}
-      {{ if eq $type "quoters" }}
+      {{ if eq $type "concerned" }}
         {{ $desktop = site.Params.persons.publication.desktop }}
       {{ else }}
         {{ $desktop = site.Params.persons.post.desktop }}

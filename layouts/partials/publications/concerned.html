@@ -1,6 +1,6 @@
 {{ range .Params.concerned }}
-  {{ $quoter := where (where site.Pages "Section" "persons" ) "File.BaseFileName" "eq" . }}
-  {{ range $quoter }}
+  {{ $person := where (where site.Pages "Section" "persons" ) "File.BaseFileName" "eq" . }}
+  {{ range $person }}
     {{ partial "commons/person" (dict "person" . "type" "concerned") }}
   {{ end }}
 {{ end }}
