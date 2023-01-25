@@ -8,6 +8,11 @@
   {{ $divider = 1.2 }}
 {{ end }}
 
+{{ $lazy := true }}
+{{ if .first }}
+  {{ $lazy = false }}
+{{ end }}
+
 <section class="block-figure{{ with .background }} block-bg{{ end }}">
   <div class="container">
 
@@ -35,6 +40,7 @@
             "alt" $alt 
             "desktop" $desktop
             "mobile" $mobile
+            "lazy" $lazy 
             "legend" $legend 
             "credit" $credit
             ) }}
