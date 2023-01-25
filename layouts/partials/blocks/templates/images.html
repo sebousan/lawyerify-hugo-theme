@@ -1,3 +1,5 @@
+{{ $first := .first }}
+
 <section class="block-images{{ with .background }} block-bg{{ end }}">
   <div class="container">
     
@@ -9,6 +11,7 @@
         {{ $mobile := site.Params.blocks.figure.mobile | default false }}
         {{ partial "commons/images" (dict
           "images" .
+          "first" $first
           "desktop" $desktop
           "mobile" $mobile ) }}
       </div>
