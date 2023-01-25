@@ -1,3 +1,4 @@
+{{ $first := .first }}
 {{ $desktop := .desktop | default site.Params.image.desktop | default false }}
 {{ $mobile := .mobile | default site.Params.image.mobile | default false }}
 {{ range $index, $image := .images }}
