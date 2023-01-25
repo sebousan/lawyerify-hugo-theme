@@ -8,13 +8,15 @@ params:
     mobile: 300
   image:
     xlarge: "1600x"
+    xsmall: "50x50"
     desktop: "856x"
     mobile: "300x"
-    avatar: "50x50"
+    scrollsnap: "240x"
   expertises:
     thumbnail:
       desktop: "414x177"
       mobile: "300x129"
+      scrollsnap: "240x103"
     image:
       desktop: "300x"
       mobile: "300x"
@@ -22,6 +24,7 @@ params:
     thumbnail:
       desktop: "414x414"
       mobile: "300x300"
+      scrollsnap: "240x103"
     image:
       desktop: "300x"
       mobile: "300x"
@@ -42,6 +45,7 @@ params:
     thumbnail:
       desktop: "414x177"
       mobile: "300x129"
+      scrollsnap: "240x103"
     image:
       desktop: "856x"
       mobile: "300x"
@@ -49,6 +53,7 @@ params:
     thumbnail:
       desktop: "414x177"
       mobile: "300x129"
+      scrollsnap: "240x103"
     image:
       desktop: "856x"
       mobile: "300x"
@@ -60,4 +65,4 @@ params:
       desktop: "1292x"
       mobile: "300x"
     gallery:
-      mobile: "300x"
+      mobile: "138x138"

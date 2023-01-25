@@ -1,9 +1,16 @@
-{{ if gt . 0 }}
-  <div class="publications">
-    {{ range . }}
-      <div>
-        {{ partial "publications/item.html" . }}
-      </div>
-    {{ end }}
-  </div>
+{{ $pages := . }}
+{{ if reflect.IsMap . }}
+  {{ $pages = .pages }}
+{{ end }}
+
+{{ with $pages }}
+  {{ if gt . 0 }}
+    <div class="publications">
+      {{ range . }}
+        <div>
+          {{ partial "publications/item.html" . }}
+        </div>
+      {{ end }}
+    </div>
+  {{ end }}
 {{ end }}

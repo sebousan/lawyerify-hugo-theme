@@ -3,8 +3,8 @@
 
 {{ with $pages }}
   {{ $count := . | len }}
-  {{ $desktop := site.Params.image.avatar | default false }}
-  {{ $mobile := site.Params.image.avatar | default false }}
+  {{ $desktop := site.Params.image.xsmall | default false }}
+  {{ $mobile := site.Params.image.xsmall | default false }}
   <aside class="list list-offices">
     <p>{{ i18n "offices.title" $count }}</p>
     <ul>

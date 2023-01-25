@@ -1,7 +1,26 @@
-<div class="offices">
-  {{ range . }}
-    <div>
-      {{ partial "offices/item.html" . }}
+{{ $pages := . }}
+{{ $scrollsnap := false }}
+{{ if reflect.IsMap . }}
+  {{ $pages = .pages }}
+  {{ with .scrollsnap }}
+    {{ $scrollsnap = true }}
+  {{ end }}
+{{ end }}
+
+{{ with $pages }}
+  {{ if gt . 0 }}
+    <div class="offices">
+      {{ range . }}
+        <div>
+          {{ if $scrollsnap }}
+            {{ .Scratch.Set "scrollsnap" true }}
+          {{ end }}
+          {{ partial "offices/item.html" . }}
+          {{ if $scrollsnap }}
+            {{ .Scratch.Delete "scrollsnap" }}
+          {{ end }}
+        </div>
+      {{ end }}
     </div>
   {{ end }}
-</div>
+{{ end }}

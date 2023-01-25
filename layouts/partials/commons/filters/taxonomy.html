@@ -23,8 +23,8 @@
           <li>
               {{ if $withImage }}
                 {{- with $image}}
-                  {{ $desktop := site.Params.image.avatar | default false }}
-                  {{ $mobile := site.Params.image.avatar | default false }}
+                  {{ $desktop := site.Params.image.xsmall | default false }}
+                  {{ $mobile := site.Params.image.xsmall | default false }}
                   {{ partial "commons/image.html" (dict
                     "src" .src
                     "alt" .alt
