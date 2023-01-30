@@ -2,11 +2,16 @@
     "name": "lawyerify-hugo-theme",
     "version": "1.0.1",
     "repository": "git@github.com:sebousan/lawyerify-hugo-theme.git",
+    "bugs": {
+        "url": "https://github.com/sebousan/lawyerify-hugo-theme/issues"
+    },
     "author": {
         "name": "Lawyerify",
         "url": "https://www.lawyerify.fr/"
     },
+    "license": "MIT",
     "dependencies": {
+        "@midzer/tobii": "^2.5.0",
         "@popperjs/core": "^2.11.2",
         "bootstrap": "^5.2.3",
         "bootstrap-icons": "^1.10.3"
