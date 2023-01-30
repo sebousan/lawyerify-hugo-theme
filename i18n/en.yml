@@ -8,6 +8,7 @@ categories:
   title:
     one: Category
     other: Categories
+close: Close
 concerned:
   discover: Découvrir la personne concernée
   title:
@@ -43,6 +44,7 @@ link:
   blank: extern link
   blank_aria: « {{ .Title }} » - extern link
 more: Read more
+next: Next
 navigation:
   close: Close
   main: Main navigation
@@ -76,6 +78,7 @@ posts:
     one: New
     other: News
   title_person: News of {{ .Person }}
+previous: Previous
 publications:
   latest: Latest publications
   latest_person: Latest publications of {{ .Person }}

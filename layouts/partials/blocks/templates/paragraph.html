@@ -33,6 +33,9 @@
       <div class="{{ $class }}">
     {{ end }}
     
+    {{ with .surtitle }}
+      <p class="surtitle">{{ partial "PrepareHTML" . }}</p>
+    {{ end }}
     {{ with .title }}
       <h2>{{ partial "PrepareHTML" . }}</h2>
     {{ end }}

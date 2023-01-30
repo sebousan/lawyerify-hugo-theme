@@ -12,6 +12,9 @@ params:
     desktop: "856x"
     mobile: "300x"
     scrollsnap: "240x"
+  hero:
+    desktop: "416x"
+    mobile: "300x"
   expertises:
     thumbnail:
       desktop: "414x177"

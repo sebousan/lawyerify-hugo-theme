@@ -8,6 +8,7 @@ categories:
   title:
     one: Categorie
     other: Categories
+close: Fermer
 concerned:
   discover: Découvrir la personne concernée
   title:
@@ -49,6 +50,7 @@ navigation:
   close: Fermer
   main: Navigation principale
   menu: Menu
+next: Suivant
 offices:
   all: Tous les cabinets
   discover: Découvrez le cabinet
@@ -91,6 +93,7 @@ posts:
     one: Actualité
     other: Actualités
   title_person: Actualités de {{ .Person }}
+previous: Précédent
 publications:
   all: Toutes les parutions du cabinet
   latest: Dernières parutions
