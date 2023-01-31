@@ -2,10 +2,7 @@
   <ul class="nav nav-social">
     {{ range .links }}
       <li class="social-{{ lower (safeHTML .title | urlize) }}">
-        {{ $title := i18n "link.blank_aria" (dict "Title" .title) }}
-        <a href="{{ .url }}"{{ if .blank }} title="{{ safeHTML $title }}" target="_blank" rel="noopener noreferrer"{{ end }}>
-          <span>{{ .title }}</span>
-        </a>
+        {{ partial "nav/link" (dict "link" .) }}
       </li>
     {{ end }}
   </ul>

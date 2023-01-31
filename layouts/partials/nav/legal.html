@@ -2,8 +2,7 @@
   <ul class="nav nav-legal">
     {{ range .links }}
       <li>
-        {{ $title := i18n "link.blank_aria" (dict "Title" .title) }}
-        <a href="{{ .url }}"{{ if .blank }} title="{{ safeHTML $title }}" target="_blank" rel="noopener noreferrer"{{ end }}>{{ .title }}</a>
+        {{ partial "nav/link" (dict "link" .) }}
       </li>
     {{ end }}
   </ul>
