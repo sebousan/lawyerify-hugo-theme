@@ -24,7 +24,7 @@
           <div>
             <a href="{{ .Permalink }}">{{ .Title }}</a>
             {{ with .Description }}
-              <br><span>{{ partial "TruncateContent" (dict "content" .) }}</span>
+              <br><span>{{ partial "TruncateContent" (dict "content" . "limit" 110) }}</span>
             {{ end }}
           </div>
         </li>
